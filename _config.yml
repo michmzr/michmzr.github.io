@@ -23,7 +23,7 @@ external:                  # shows a footer with social links - for available ic
   - {title: Mail, icon: envelope, url: "mailto:michmzr@users.noreply.github.com"}
   - {title: Github, icon: github, url: "https://github.com/michmzr"}
   - {title: Subscribe, icon: rss, url: "/feed.xml"}
-  - {title: LinkedId, icon: linkedin, url: "https://www.linkedin.com/in/michmzr/"}
+  - {title: LinkedId, icon: linkedin-square, url: "https://www.linkedin.com/in/michmzr/"}
 
 comments:
 #  disqus_shortname: ""    # see https://disqus.com/
