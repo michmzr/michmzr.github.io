@@ -1,6 +1,6 @@
-title: "Mazi blog"
+title: "GeekIT"
 author: "Michał Mazur"
-description: "Personal IT Blog"
+description: "Generalist approach to IT"
 permalink: /:title/
 lang: "en"
 excerpt_separator: "\n\n\n"
@@ -30,4 +30,5 @@ comments:
 #  isso_domain: ""         # see https://posativ.org/isso/
 
 plugins:
- - jekyll-feed
+  - jekyll-feed
+  - jekyll-sitemap
