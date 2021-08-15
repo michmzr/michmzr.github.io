@@ -1,12 +1,9 @@
 source "https://rubygems.org"
 
-gem "jekyll", "~> 4.2.0"
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
+gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 
-group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.12"
-  gem 'jemoji', '~> 0.12.0'
-  gem 'jekyll-sitemap', '~> 1.4'
-  # gem 'github-pages', '~> 218'
-end
+# gem "github-pages", group: :jekyll_plugins
+gemspec
 
 gem "webrick", "~> 1.7"
