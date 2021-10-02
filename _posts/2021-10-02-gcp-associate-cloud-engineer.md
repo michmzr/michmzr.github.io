@@ -1,10 +1,9 @@
 ---
-layout: articles
+layout: article
 title: GCP - Associate Cloud Engineer - How to certificate
 permalink: /articles/gcp-associate-cloud-engineer-ghow-to-certificate.html
 tags: gcp, google-cloud-platform, engineer, certification, learning, cloud, career
 ---
-
 
 I have started working with Google Cloud Platform almost one year ago. It was my first serious contact with developing on cloud. I liked it and decided to speed  up my personal development.
 
