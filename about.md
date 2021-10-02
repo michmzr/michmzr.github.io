@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: page
 titles:
   # @start locale config
   en      : &EN       About
@@ -10,9 +10,6 @@ titles:
   # @end locale config
 key: page-about
 ---
-
-# About me
-
 :wave: Hello World!
 
 My name is Michał Mazur and this is my technical blog or my library with my thoughts, case studies from my career, tutorials etc.
