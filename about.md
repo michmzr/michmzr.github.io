@@ -11,14 +11,14 @@ titles:
 key: page-about
 ---
 
-## About me
+# About me
 
 :wave: Hello World!
 
 My name is Michał Mazur and this is my technical blog or my library with my thoughts, case studies from my career, tutorials etc.
-I cover a wide range of topics like productivity, projekt management, devops, programming, software architecture etc.
+I cover a wide range of topics like productivity, project management, devops, programming, software architecture etc.
 
-I am software engineer with 10 yeard of experience in wide range of technologies and markets. I was working for small startups to global corporations.
+I am software engineer with more than 10 years of experience in a wide range of technologies and markets. I was working for small startups to global corporations.
 
 <!--more-->
 
@@ -33,7 +33,8 @@ At work, I deal with it on a daily basis with:
 
 I love to learn, jump on the chance to challenge my skills on difficult subjects.
 
-The opinions expressed herein are my own personal opinions and do not represent my employer’s view in anyway.
+The opinions expressed herein are my own personal opinions and do not represent my employer’s view in any way.
+
 ## You can find me on
 
 - Personal, non technical blog [Geekowojażer](geekowojazer.pl) (only polish language)
