@@ -49,6 +49,13 @@ After you finish exam, you get a first confirmation if you passed or failed. You
 My certification manager from Lingaro suggested posting an article on LinkedIn about passed exam and link a Dan Sullivan (author official GCP guide book) and GCP manager on Poland - Marta Matysiak. You can see my post on
 <https://www.linkedin.com/posts/michmzr_career-gcp-cloud-activity-6810806355046256640-qo6C>
 
+## Contact
+I hope what I wrote is useful :). Please leave any comments to let me know. If you have any questions, please feel free to contact me directly on:
+- Twitter: [https://twitter.com/MichalMzr](https://twitter.com/MichalMzr)
+- LinkedIn: [https://www.linkedin.com/in/michmzr/](https://www.linkedin.com/in/michmzr/)
+
+You can also find my posts on my second blog [Geekowojażer.pl](https://www.geekowojazer.pl/)
+
 ## Links
 
 ### Book
