@@ -2,7 +2,7 @@
 layout: article
 title: How to generate Spring Boot application yaml properties with Helm on Kubernetes
 permalink: /articles/how-to-generate-spring-boot-yaml-helm-k8s.html
-tags: spring-boot, dev, java, kubernetes, k8s, yaml, helm, demo, docker, virtualisation, cloud, devops
+tags: spring-boot, dev, java, kubernetes, k8s, yaml, helm, demo, docker, virtualization, cloud, devops
 lang: en
 key: lang-en
 ---

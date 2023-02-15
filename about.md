@@ -20,13 +20,13 @@ I am software engineer with more than 10 years of experience in a wide range of 
 <!--more-->
 
 At work, I deal with it on a daily basis with:
-- Google Cloud Platform
+- Google Cloud Platform/Azure
 - Kubernetes
 - Spring Boot
 - BigData
 - Java
 - Python
-- Javascript (from time to time)
+- Javascript + TypeScript
 
 I love to learn, jump on the chance to challenge my skills on difficult subjects.
 
