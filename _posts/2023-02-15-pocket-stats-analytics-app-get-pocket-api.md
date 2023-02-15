@@ -7,19 +7,26 @@ lang: en
 key: lang-en
 ---
 
-I am a person who likes to motivate myself through figures and compare my results with others. By the way I'm a geek, I spend most of my time on the Internet. I subscribe to a dozen newsletters, read the RSS feeds of dozens of blogs, browse social media like LinkedIn and Twitter regularly. Every day there are a lot of links to sites, documents, tools I want to familiarize myself with. I use a simple app for this - [GetPocket](https://getpocket.com/)
-It supports android, ios, web, has plugins for browsers. It simply works. I click on "save to pocket" and the link is added to the "to read" list in the app. At my leisure, I browse the links, archive, mark the most interesting passages, save the links to "favorites". And so I have been using it for almost 11 years now. I really miss the ability to preview my statistics, e.g. how many links I have reviewed today, how many links I have since reviewed, how many I have added today, etc. etc.
+I am a person who likes to motivate myself through figures and compare my results with others. I spend most of my time on the Internet.
+I subscribe a dozen newsletters, read the RSS feeds of dozens of blogs, browse social media like LinkedIn and Twitter regularly.
+Every day there are a lot of links to sites, documents, tools I want to familiarize myself with.
 
-Only 5% and 1% of the most active users get a nice annualy report. I feel out a year ago and I wasn't able to see how many I read, which tags are the most popular. I am not able to compare with friends. :/
+I use app  [GetPocket](https://getpocket.com/) to track link to read later. It supports android, ios, web, has plugins for browsers.
+It simply works. I click on "save to pocket" and the link is added to the "to read" list in the app.
+At my leisure, I browse the links, archive, mark the most interesting passages, save the links to "favorites". And so I have been using it for almost 11 years now. I really miss the ability to preview my statistics, e.g. how many links I have reviewed today, how many links I have since reviewed, how many I have added today, etc. etc.
 
-The developers have released a REST API - https://getpocket.com/developer/docs/overview. I got together with about 2 years to write a simple application to generate statistics. I got together and in a dozen hours wrote a simple CLI Spring bot application with a database - MongoDB. Plus a simple Jupyter Notebook to generate charts and tables.
+Only 5% and 1% of the most active users get a nice annual report :/
 
-Why such a technology stack? I work with Java and spring boot on a daily basis, I know these tools, I know how to build an application quickly. The plan is to build a UI and make the application available for multi-user use. If you would be interested in using such an application, please give me a supportive comment ;) It is more pleasant to create something if I know it will be used.
+The developers have released a REST API - [https://getpocket.com/developer/docs/overview](https://getpocket.com/developer/docs/overview). I decided to create a side project application and solve my problem with no stats dashboard in GetPocket.
+I created a simple CLI Spring boot application with a database - MongoDB. Plus a simple Jupyter Notebook to generate charts and tables.
 
-You can find the application code on my github: https://github.com/michmzr/PocketStats
+Why such a technology stack? I work with Java and spring boot on a daily basis, I know these tools and I know how to build an application quickly. The plan is to build a UI and make the application available for multi-user use.
+If you would be interested in using such an application, please give me a supportive comment ;) It is more pleasant to create something if I know it will be used.
+
+You can find the application code on my github: [https://github.com/michmzr/PocketStats](https://github.com/michmzr/PocketStats)
 
 ## Authorization and authentification with Pocket API
-In order to use PocketAPI then I first had to create the application using https://getpocket.com/developer/apps/new. If you want to fire up the application locally, you will also have to do the same.
+In order to use PocketAPI then I first had to create the application using [https://getpocket.com/developer/apps/new](https://github.com/michmzr/PocketStats). If you want to fire up the application locally, you will also have to do the same.
 
 This is what the configuration looks like in my case:
 ![](../assets/images/posts/pocket-stats-part1/screen_get_pocket_new_app.png)
@@ -57,12 +64,11 @@ I use `gradle` 7v to build project. I decided to use it, actually for learning. 
 
 Why MongoDB? I wanted to play with the technology, see how I like to work with this database. It's perfect for holding the Jsons it receives from the API. The bottleneck might be analytics and preparing individual statistics in the future.
 
-Using docker and docker servicu file, you can create a ready-made MongoDB container on the latest version.
-https://github.com/michmzr/PocketStats/blob/master/src/main/docker/mongodb.yml
-
+Using docker and docker service file, you can create a ready-made MongoDB container on the latest version.
+`https://github.com/michmzr/PocketStats/blob/master/src/main/docker/mongodb.yml
+`
 ## Application setup
-You need to define an environment variable `POCKET_CONSUMER_KEY`, which stores the value of the `consumer key` returned by GetPOcket when creating a new Oauth application. For more on this process, see ![authorization](#authorization-and-authentification-with-pocket-api)
-
+You need to define an environment variable `POCKET_CONSUMER_KEY`, which stores the value of the `consumer key` returned by GetPocket when creating a new Oauth application. For more on this process, see ![authorization](#authorization-and-authentification-with-pocket-api)
 
 ## Application interfaces
 I decided to develop the app as a CLI application in the MVP version. This requires less work than creating a front end or designing endpoints under REST. I used [Spring Shell](https://spring.io/projects/spring-shell) to handle the commands. When you launch the application, a prompt appears in the console where you type commands.
@@ -70,26 +76,11 @@ I decided to develop the app as a CLI application in the MVP version. This requi
 
 Supported commands, their parameters, run conditions are defined using annotations. It works very cool :)
 
-For example:
-
+Example class file which defines import commands.
 ``` java
 @ShellComponent
 public class ImportPocketCommand extends SecuredCommand {
-    private static final String EXPECTED_DATE_FORMAT = "dd-MM-yyyy";
-
-    @Lazy
-    private final ShellHelper shellHelper;
-
-    private final PocketApiService pocketApiService;
-
-    private final PocketItemRepository repository;
-
-    public ImportPocketCommand(ShellHelper shellHelper, PocketApiService pocketApiService,
-                               PocketItemRepository repository) {
-        this.shellHelper = shellHelper;
-        this.pocketApiService = pocketApiService;
-        this.repository = repository;
-    }
+    ...
 
     @ShellMethod("Import items since last migration")
     @ShellMethodAvailability("isUserAuthorized")
@@ -122,10 +113,23 @@ public class ImportPocketCommand extends SecuredCommand {
 
         shellHelper.printInfo("Collection of pocket items got cleaned.");
     }
+
+    ...
 }
 ```
 
-The `@ShellMethodAvailability` annotation runs an AOP method that checks whether a command can be run by a user. For example, you can check if the user is logged in. My application requires that the user has previously authorized GetPocket and OAuth2 credentials have been retrieved.
+Methods are annotated with `@ShellMethod` are run from the console. The method name is replaced with `kebab-case`. For example, the `importAll` method can be run with the `import-all` command.
+
+```java
+@ShellMethod("Import all items from API to DB")
+    @ShellMethodAvailability("isUserAuthorized")
+    public void importAll() throws IOException, InterruptedException {
+        shellHelper.print("Imported: " + pocketApiService.importAll());
+    }
+```
+
+The `@ShellMethodAvailability` annotation runs an AOP method that checks whether a command can be run by a user.
+For example, you can check if the user is logged in. My application requires that the user has previously authorized GetPocket and OAuth2 credentials have been retrieved.
 
 ``` java
 public abstract class SecuredCommand {
@@ -142,24 +146,16 @@ public abstract class SecuredCommand {
 }
 ```
 
-Methods are annotated with `@ShellMethod` are run from the console. The method name is replaced with `kebab-case`. For example, the `importAll` method can be run with the `import-all` command.
-
-```java
-@ShellMethod("Import all items from API to DB")
-    @ShellMethodAvailability("isUserAuthorized")
-    public void importAll() throws IOException, InterruptedException {
-        shellHelper.print("Imported: " + pocketApiService.importAll());
-    }
-```
-
 ## Items import from GetPocket
 Statistics are calculated based on the contents of the database plugged into the application. If someone wants, he can rewrite the code, so that it calculates the statistics immediately after receiving the response, bypassing the database ;)
 
 I decided to use a local database because of the speed of the solution, the ability to save the calculated statistics, information about users.
 
-The heart of the integration is the `PocketApiService` class and the generic `callGetApi` method:
+The heart of the integration is the [PocketApiService.java](https://github.com/michmzr/PocketStats/blob/master/src/main/java/eu/cybershu/pocketstats/pocket/PocketApiService.java) class and the generic `callGetApi` method:
 
 ``` java
+...
+
 private PocketGetResponse callGetApi(Map%3CString, Object%3E extraFields) throws IOException, InterruptedException {
         Map<Object, Object> payloadData = new HashMap<>();
         payloadData.put("consumer_key", pocketConsumerKey);
@@ -224,14 +220,17 @@ private PocketGetResponse callGetApi(Map%3CString, Object%3E extraFields) throws
     public PocketUserCredentials getCreds() {
         return authorizationService.getCredentials().orElseThrow(() -> new IllegalStateException("Not found saved credentials. Authorize to service first"));
     }
+
+    ...
 ```
 
 The `callGetApi` function is responsible for executing the request and processing the response from the server.
 
-The imported link history from GetPocket is kept in the MongoDB database as a `pocketItem` document.
+The imported items(links) history from GetPocket is kept in the MongoDB's `pocketItem` document.
 
 ## REST/web endpoints
-The application publishes only one http endpoint - `pocket/auth`. It is needed to confirm the completion of the authorization flow.
+The application publishes only one http endpoint - `pocket/auth`. It's needed to confirm the completion of the authorization flow.
+User after successful authorizations is redirected to this url.
 
 ```java
 @Slf4j
@@ -253,10 +252,9 @@ public class PocketApiController {
 ```
 
 ## Raport
-I have prepared a simple jupiter notebook https://github.com/michmzr/PocketStats/blob/master/src/main/raporting/raport.ipynb, where using Pandas loads data from the database and generates charts or tables.
+I prepared a jupiter notebook [raport.ipynb](https://github.com/michmzr/PocketStats/blob/master/src/main/raporting/raport.ipynb), where Pandas library loads data from the database and generates charts or tables.
 
 In the next version of PocketStats I would already like to have a simple visual dashboard.
-
 
 ## Contact
 I hope what I wrote is useful :). Please leave any comments to let me know. If you have any questions, please feel free to contact me directly on:
