@@ -11,7 +11,7 @@ I am a person who likes to motivate myself through figures and compare my result
 I subscribe a dozen newsletters, read the RSS feeds of dozens of blogs, browse social media like LinkedIn and Twitter regularly.
 Every day there are a lot of links to sites, documents, tools I want to familiarize myself with.
 
-I use app  [GetPocket](https://getpocket.com/) to track link to read later. It supports android, ios, web, has plugins for browsers.
+I use app  [GetPocket](https://getpocket.com/) to track links to read later. It supports android, ios, web, has plugins for browsers.
 It simply works. I click on "save to pocket" and the link is added to the "to read" list in the app.
 At my leisure, I browse the links, archive, mark the most interesting passages, save the links to "favorites". And so I have been using it for almost 11 years now. I really miss the ability to preview my statistics, e.g. how many links I have reviewed today, how many links I have since reviewed, how many I have added today, etc. etc.
 
@@ -32,7 +32,7 @@ This is what the configuration looks like in my case:
 ![](../assets/images/posts/pocket-stats-part1/screen_get_pocket_new_app.png)
 I marked the red box `CONSUMER KEY` It will be needed when registering the user and getting the `access key`.
 
-GetPocket Api uses Ouath2, so the application only stores the `access token` of the user. He just needs to log in through the PocketStats-generated authorization link, log in to GetPocket and allow PocketStats to connect.
+GetPocket Api uses Ouath2, so the application only stores the `access token` of the user. User just needs to log in through the PocketStats-generated authorization link, log in to GetPocket and allow PocketStats to connect.
 
 Diagram of the authorization process.
 ``` mermaid
@@ -60,7 +60,7 @@ I decided to use:
 - Docker - MacOs Arm version
 - Spock 2 + groovy 3 for testing
 
-I use `gradle` 7v to build project. I decided to use it, actually for learning. I have been using Maven on a daily basis for several years. I decided to do an experiment and see how Spring Boot 3 will work with the latest gradle. In Gradel I like the more readable source file, the way it works than in Maven.
+I use `gradle` 7v to build project. I decided to use it, actually for learning. I have been using Maven on a daily basis for several years. I decided to do an experiment and see how Spring Boot 3 will work with the latest gradle. In Grade I like the more readable source file, the way it works than in Maven.
 
 Why MongoDB? I wanted to play with the technology, see how I like to work with this database. It's perfect for holding the Jsons it receives from the API. The bottleneck might be analytics and preparing individual statistics in the future.
 
@@ -68,13 +68,13 @@ Using docker and docker service file, you can create a ready-made MongoDB contai
 `https://github.com/michmzr/PocketStats/blob/master/src/main/docker/mongodb.yml
 `
 ## Application setup
-You need to define an environment variable `POCKET_CONSUMER_KEY`, which stores the value of the `consumer key` returned by GetPocket when creating a new Oauth application. For more on this process, see ![authorization](#authorization-and-authentification-with-pocket-api)
+You need to define an environment variable `POCKET_CONSUMER_KEY`, which stores the value of the `consumer key` returned by GetPocket when creating a new Oauth application. For more on this process, see [authorization](#authorization-and-authentification-with-pocket-api)
 
 ## Application interfaces
 I decided to develop the app as a CLI application in the MVP version. This requires less work than creating a front end or designing endpoints under REST. I used [Spring Shell](https://spring.io/projects/spring-shell) to handle the commands. When you launch the application, a prompt appears in the console where you type commands.
 ![](../assets/images/posts/pocket-stats-part1/PocketStats_screen_help_command.png)
 
-Supported commands, their parameters, run conditions are defined using annotations. It works very cool :)
+Supported commands, their parameters and run conditions are defined using annotations. It works very smoothly :)
 
 Example class file which defines import commands.
 ``` java
@@ -252,9 +252,9 @@ public class PocketApiController {
 ```
 
 ## Raport
-I prepared a jupiter notebook [raport.ipynb](https://github.com/michmzr/PocketStats/blob/master/src/main/raporting/raport.ipynb), where Pandas library loads data from the database and generates charts or tables.
+I prepared a jupiter notebook [raport.ipynb](https://github.com/michmzr/PocketStats/blob/master/src/main/raporting/raport.ipynb), where Pandas library loads data from the database and generates charts and tables.
 
-In the next version of PocketStats I would already like to have a simple visual dashboard.
+In the next version of PocketStats I would like to have a simple visual dashboard on frontend. I think to use Vue.
 
 ## Contact
 I hope what I wrote is useful :). Please leave any comments to let me know. If you have any questions, please feel free to contact me directly on:
