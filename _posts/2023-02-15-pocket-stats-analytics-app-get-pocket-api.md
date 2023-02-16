@@ -72,7 +72,7 @@ You need to define an environment variable `POCKET_CONSUMER_KEY`, which stores t
 
 ## Application interfaces
 I decided to develop the app as a CLI application in the MVP version. This requires less work than creating a front end or designing endpoints under REST. I used [Spring Shell](https://spring.io/projects/spring-shell) to handle the commands. When you launch the application, a prompt appears in the console where you type commands.
-![](../assets/images/posts/pocket-stats-part1/PocketStats_screen_help_command.png)
+![](../assets/images/posts/pocket-stats-part1/getstats_screen_help_command.png)
 
 Supported commands, their parameters and run conditions are defined using annotations. It works very smoothly :)
 
