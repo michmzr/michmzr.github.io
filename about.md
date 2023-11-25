@@ -22,16 +22,16 @@ At work, I deal with it on a daily basis with:
 - Kubernetes
 - Spring Boot
 - BigData
-- Java
+- Java, Kotlin
 - Python
 - Javascript + TypeScript
-- Vue 3 + Angular
+- Vue 3 + Angular + Svelte
 - GPT 3 & 4
 - make.com & n8n
 - Dropwizard
 - CockroachDB
 - MongoDB
--
+- PostgreSQL
 
 I love to learn, jump on the chance to challenge my skills on difficult subjects.
 
