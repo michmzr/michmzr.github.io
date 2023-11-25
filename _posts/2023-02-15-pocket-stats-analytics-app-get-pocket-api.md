@@ -4,7 +4,7 @@ title: PocketStats app - how to integrate with GetPocket Api and visualize readi
 permalink: /articles/pocket-stats-analytics-app-get-pocket-api.html
 tags: spring-boot, dev, java, docker, spring, shell, cli, spring-shell, shell-cli, api, oauth2, mongodb, gradle, java-18, pocket, analytics, pandas, jupiter, jupiter-notebook
 lang: en
-key: lang-en
+key: pocket-stats-analytics-app-get-pocket-api
 ---
 
 I am a person who likes to motivate myself through figures and compare my results with others. I spend most of my time on the Internet.
