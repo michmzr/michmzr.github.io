@@ -11,16 +11,16 @@ layout: page
 My name is Michał Mazur and this is my technical blog or my library with my thoughts, case studies from my career, tutorials etc.
 I cover a wide range of topics like productivity, projekt management, devops, programming, software architecture etc.
 
-I am software engineer with 10 yeard of experience in wide range of technologies and markets. I was working for small startups to global corporations.
+I am software engineer with 10 years of experience in wide range of technologies and markets. I was working for small startups to global corporations.
 
 At work, I deal with it on a daily basis with:
-- Google Cloud Platform
+- Google Cloud Platform / Azure / AWS
 - Kubernetes
-- Spring Boot
-- BigData
+- Spring Boot / Drop Wizard
+- Angular / Vue / Svelte
 - Java
 - Python
-- Javascript (from time to time)
+- Javascript / Typescript
 
 I love to learn, jump on the chance to challenge my skills on difficult subjects.
 
