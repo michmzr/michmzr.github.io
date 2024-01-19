@@ -64,7 +64,7 @@ you can alternatively use docker build command:
           push: false
           tags: my-image:latest
           file: Dockerfile
-      - name: Login to Cisco DevHub Docker Hub
+      - name: Login to DevHub Docker Hub
         uses: docker/login-action@v3
         with:
           registry: "artifactory.example.com"
