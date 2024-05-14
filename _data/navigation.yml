@@ -9,6 +9,11 @@ header:
       en      : &EN       Uses
       # @end locale config
     url: /uses.html
+  - titles:
+      # @start locale config
+      en: &EN       🤙Consultations
+      # @end locale config
+    url: /consultations.html
 
   - titles:
       # @start locale config
