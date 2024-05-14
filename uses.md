@@ -18,7 +18,7 @@ Welcome to my "Uses" page, where I share the details about the hardware, softwar
 I believe the right hardware sets the foundation for an effective workflow. Here's my current setup:
 
 - **Computer:** MacBook Pro 16'' (2019), 32GB RAM
-- **Phone:** OnePlus 7T Pro
+- **Phone:** IPhone 15 Plus
 - **Tablet:** iPad 9th
 - **Keyboard:** Mx Keys Wireless Keyboard
 - **Mouse:** MX Master 2S
@@ -31,9 +31,9 @@ The software we use can greatly influence our productivity. Here are the apps an
 - **IDE:** IntelliJ and Visual Studio Code
 - **Terminal:** iTerm and Warp
 - **Browser:** Brave
-- **Note-taking:** Obsidian (my second brain), Notion (for collaboration and some note-taking)
+- **Note-taking:** Obsidian (my second brain), Notion (for collaboration and some note-taking), Readwise
 - **Task Management:** Todoist
-- **Link Saving:** GetPocket
+- **Link Saving:** Instapaper, Readwise
 - **Clipboard Management:** Paste for macOS
 
 ## Automation Tools
@@ -55,6 +55,6 @@ Sharing my knowledge and experiences is important to me. Here's what I use to pu
 Managing finances is a crucial part of freelancing. I use these tools to handle payments and transfers:
 
 - **Payments:** Revolut
-- **International Money Transfers:** Wise.com
+- **International Money Transfers:** Revolut, Wise
 
 I hope you found this page helpful! If you have any questions about these tools, feel free to reach out. Remember, the most important thing is to find what works best for you and your workflow. Happy coding!
