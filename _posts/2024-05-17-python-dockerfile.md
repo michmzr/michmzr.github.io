@@ -1,7 +1,7 @@
 ---
 layout: article
 title: How to work with Python virtual env in Dockerfile
-permalink: /articles/
+permalink: /articles/python-dockerfile.html
 tags: python, docker, dockerfile, venv, automation, devops
 lang: en
 key: python-in-dockerfile
