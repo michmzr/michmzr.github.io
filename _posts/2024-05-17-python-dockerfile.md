@@ -7,8 +7,6 @@ lang: en
 key: python-in-dockerfile
 ---
 
-# How to work with Python virtual env in Dockerfile
-
 If you work with Python, you probably need to activate a virtual environment to manage dependencies. Using a virtualenv requires activation each time you want to use Python or pip. This blog post will show you how to effectively and elegantly work with Python when building a Dockerfile.
 
 ## Method 1: Bad

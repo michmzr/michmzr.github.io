@@ -7,8 +7,6 @@ lang: en
 key: how-to-use-kaniko-and-jfrog-with-github-actions
 ---
 
-# How to use Kaniko and JFrog Artifactory with GitHub Actions
-
 ## Introduction
 
 In this article, we will explore the use of Kaniko and JFrog with GitHub Actions to build and push a Docker image to JFrog Artifactory. This solution addressed issues I encountered while working on a project in my company. I hope it proves useful for you as well.

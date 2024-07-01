@@ -7,8 +7,6 @@ lang: en
 key: spring-boot-cors
 ---
 
-# How to configure CORS is Spring Boot Web
-
 >Cross-origin resource sharing (CORS) is a mechanism that allows restricted resources on a web page to be
   requested from another domain outside the domain from which the first resource was served. https://en.wikipedia.org/wiki/Cross-origin_resource_sharing
 
