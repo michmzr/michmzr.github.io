@@ -16,17 +16,17 @@ I am software engineer with 10 years of experience in wide range of technologies
 At work, I deal with it on a daily basis with:
 - Google Cloud Platform / Azure / AWS
 - Kubernetes
-- Spring Boot / Drop Wizard
+- Spring Boot / Dropwizard
 - Angular / Vue / Svelte
-- Java
-- Python
+- Java/Kotlin
+- Python 3
 - Javascript / Typescript
 
 I love to learn, jump on the chance to challenge my skills on difficult subjects.
 
 The opinions expressed herein are my own personal opinions and do not represent my employer’s view in anyway.
-## You can find me on
 
+## You can find me on
 - Personal, non technical blog [Geekowojażer](geekowojazer.pl) (only polish language)
 - [LinkedIn](https://www.linkedin.com/in/michmzr/)
 - [Twitter](https://twitter.com/MichalMzr)
