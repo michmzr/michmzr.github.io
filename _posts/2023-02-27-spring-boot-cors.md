@@ -2,7 +2,7 @@
 layout: article
 title: How to configure CORS in Spring Boot
 permalink: /articles/spring-boot-cors.html
-tags: spring-boot, dev, spring, cors, security, cdn, browser, api, rest, dev, development, frontend, axios
+tags: spring-boot  dev  spring  cors  security  cdn  browser  api  rest  dev  development  frontend  axios
 lang: en
 key: spring-boot-cors
 ---

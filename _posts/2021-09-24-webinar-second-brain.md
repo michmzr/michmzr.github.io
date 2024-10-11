@@ -2,7 +2,7 @@
 layout: article
 title: Jak skutecznie zarządzać swoim drugim mózgiem – personalny system zarządzania wiedzą
 permalink: /articles/webinar-second-brain.html
-tags: webinar, second-brain, notion, obsidian, para, system
+tags: webinar  second-brain  notion  obsidian  para  system
 key: webinar-second-brain
 lang: pl
 ---

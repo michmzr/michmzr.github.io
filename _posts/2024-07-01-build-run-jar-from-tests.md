@@ -2,7 +2,7 @@
 layout: article
 title: "Building and Running a JAR from the Tests Directory"
 permalink: /articles/mvn-tests-build-run-jar.html
-tags: java, maven, jar, jvm, build, testing
+tags: java maven jar jvm build testing
 lang: en
 key: mvn-tests-build-run-jar
 ---
