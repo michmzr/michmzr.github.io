@@ -200,6 +200,8 @@ exclude:
   - /screenshots
   - /test
   - /vendor
+  - _template.md
+  - _posts/_template.md
 
 defaults:
   - scope:
