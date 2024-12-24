@@ -6,9 +6,6 @@ tags: docker, jfrog, artifactory, ecr, aws, tag, push, pull, image, container, r
 lang: en
 key:  new-tag-without-push-jfrog-aws-ecr
 ---
-
-# How to create new docker image tag without push on JFrog and AWS ECR
-
 Hi  ✋,
 
 I was recently working on signing docker images and I found a performance issue. In order to sign the image,
@@ -26,7 +23,7 @@ docker push artifactory.example.com/my-image:1.0.1
 
 ## JFrog
 
-Below pipelines uses JFrog API to fetch the image manifest and add new tag to the image `${{env.IMAGE_NAME}}` tagged `${{env.SEMVER}}`.
+Below exampl pipeline steps uses JFrog API to fetch the image manifest and add new tag to the image `${{env.IMAGE_NAME}}` tagged `${{env.SEMVER}}`.
 
 ## Pipeline configuration
 ```yaml
@@ -43,47 +40,7 @@ env:
 - ARTIFACTORY_TOKEN
 
 ### Pipeline steps
-```yaml
-- name: Login to JFrog Docker Hub
-  uses: docker/login-action@9780b0c442fbb1117ed29e0efdff1e18412f7567 #v3.3.0
-  with:
-    registry: artifactory.example.com
-    username: ${{ secrets.ARTIFACTORY_USERNAME }}
-    password: ${{ secrets.ARTIFACTORY_TOKEN }}
-- run: |
-    JFROG_URL="https://${{ env.DEVHUB_REGISTRY_URL }}/"
-    REPO_NAME="${{env.DEVHUB_REPO_NAME}}"
-    JFROG_CREDS="${{ secrets.ARTIFACTORY_USERNAME }}:${{ secrets.ARTIFACTORY_TOKEN }}"
-
-    echo "Fetching the image manifest for $IMAGE_NAME:${SEMVER}..."
-    curl -sS -u $JFROG_CREDS \
-    "${JFROG_URL}artifactory/api/docker/$REPO_NAME/v2/$IMAGE_NAME/manifests/${SEMVER}" \
-    -H "Accept: application/vnd.docker.distribution.manifest.v2+json" \
-    -o manifest.json
-
-    if [ $? -ne 0 ]; then
-      echo "Failed to fetch the manifest. Exiting."
-      exit 1
-    fi
-
-    # Validate manifest.json content
-    if ! jq . manifest.json > /dev/null 2>&1; then
-      echo "Invalid JSON in manifest.json. Exiting."
-      exit 1
-    fi
-
-    echo "Successfully fetched the manifest."
-
-    # Step 2: Add the New Tag
-    echo "Adding the new tag ${TARGET_SEMVER} to the image..."
-    curl -sS -u $JFROG_CREDS -X PUT \
-    "${JFROG_URL}artifactory/api/docker/$REPO_NAME/v2/$IMAGE_NAME/manifests/${TARGET_SEMVER}" \
-    -H "Content-Type: application/vnd.docker.distribution.manifest.v2+json" \
-    -d @manifest.json
-
-    if [ $? -ne 0 ]; then
-      echo "Failed to add the new tag. Exiting."
-```
+{% gist da298ab933908a3d0610e75b18a513d9 jfrog-steps.yml  %}
 
 ## AWS ECR
 
@@ -101,48 +58,10 @@ env:
 
 ### Pipeline steps
 **Warning:**
-Authentication with AWS ECR requires AWS credentials. Please make sure you have configured AWS credentials in your pipeline. My example used on the possible mothods to configure AWS credentials in Github Actions.
+Authentication with AWS ECR requires AWS credentials. Please make sure you have configured AWS credentials in your pipeline. My example uses one of the possible methods to configure AWS credentials in GitHub Actions.
+{:.warning}
 
-
-```yaml
-- name: Configure AWS Credentials
-  uses: aws-actions/configure-aws-credentials@e3dd6a429d7300a6a4c196c26e071d42e0343502 # v4.0.2
-  with:
-    role-to-assume: ${{ env.AWS_WORKFLOW_ROLE }}
-    role-session-name: ${{env.AWS_ROLE_SESSION_NAME}}
-    aws-region: ${{env.AWS_REGION}} }}
-- name: Login to Amazon ECR
-  id: login-ecr
-  uses: aws-actions/amazon-ecr-login@062b18b96a7aff071d4dc91bc00c4c1a7945b076 #v2.01
-- name: get ECR registry name
-  run: |
-    echo "ECR_REPO_URL=${{ steps.login-ecr.outputs.registry }}" >> $GITHUB_ENV
-- run: |
-    # Step 1: Get the image manifest for the existing tag
-    echo "Fetching the image manifest for $IMAGE_NAME:${SEMVER} from AWS ECR..."
-    IMAGE_MANIFEST=$(aws ecr batch-get-image --repository-name "$IMAGE_NAME" --image-ids imageTag=${SEMVER}  --query 'images[].imageManifest'  --output text)
-
-    if [ -z "$IMAGE_MANIFEST" ]; then
-      echo "Failed to fetch the image manifest. Exiting."
-      exit 1
-    fi
-
-    echo "Successfully fetched the image manifest."
-
-    # Step 2: Create the new tag using the fetched manifest
-    echo "Creating a new tag ${TARGET_SEMVER} for $IMAGE_NAME ..."
-    aws ecr put-image \
-    --repository-name $IMAGE_NAME \
-    --image-tag ${TARGET_SEMVER} \
-    --image-manifest "$IMAGE_MANIFEST"
-
-    if [ $? -ne 0 ]; then
-      echo "Failed to create the new tag. Exiting."
-      exit 1
-    fi
-
-    echo "Successfully added the new tag ${TARGET_SEMVER} to the image $IMAGE_NAME ."
-```
+{% gist da298ab933908a3d0610e75b18a513d9 ecr-steps.yml %}
 
 ## Wrap-up
 I hope the article at least intrigued you, you learned something new.
