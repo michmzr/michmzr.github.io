@@ -2,7 +2,7 @@
 layout: article
 title: "[Arch Kata] Lets's design hotdog POS system"
 permalink: /articles/arch-kata-hotdog-pos-system.html
-tags: system, design, system-design, architecture, kata, tech, distributed-architecture, case-study, chat-gpt, llm, pair-programming
+tags: system  design  system-design  architecture  kata  tech  distributed-architecture  case-study  chat-gpt  llm  pair-programming
 lang: en
 key: arch-kata-hotdog-pos-system
 ---

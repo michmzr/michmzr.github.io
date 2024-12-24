@@ -25,7 +25,7 @@ At work, I deal with it on a daily basis with:
 - Java, Kotlin, Python, TypeScript
 - Vue 3, Angular, Svelte
 - GPT 3 & 4
-- make.com & n8n
+- Automation platforms: make.com & n8n
 - Dropwizard
 - CockroachDB
 - MongoDB

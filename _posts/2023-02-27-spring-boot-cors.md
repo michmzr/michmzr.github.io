@@ -2,12 +2,10 @@
 layout: article
 title: How to configure CORS in Spring Boot
 permalink: /articles/spring-boot-cors.html
-tags: spring-boot, dev, spring, cors, security, cdn, browser, api, rest, dev, development, frontend, axios
+tags: spring-boot  dev  spring  cors  security  cdn  browser  api  rest  dev  development  frontend  axios
 lang: en
 key: spring-boot-cors
 ---
-
-# How to configure CORS is Spring Boot Web
 
 >Cross-origin resource sharing (CORS) is a mechanism that allows restricted resources on a web page to be
   requested from another domain outside the domain from which the first resource was served. https://en.wikipedia.org/wiki/Cross-origin_resource_sharing

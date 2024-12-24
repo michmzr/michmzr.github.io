@@ -2,7 +2,7 @@
 layout: article
 title: GCP - Associate Cloud Engineer - How to certificate
 permalink: /articles/gcp-associate-cloud-engineer-ghow-to-certificate.html
-tags: gcp, google-cloud-platform, engineer, certification, learning, cloud, career
+tags: gcp  google-cloud-platform  engineer  certification  learning  cloud  career
 lang: en
 key: gcp-associate-cloud-engineer-how-to-certificate
 ---

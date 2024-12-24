@@ -1,8 +1,8 @@
 ---
-layout:
+layout: article
 title:
-permalink:
+permalink: /.html
 tags:
-lang:
+lang: en
 key:
 ---

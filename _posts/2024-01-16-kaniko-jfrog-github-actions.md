@@ -2,12 +2,10 @@
 layout: article
 title: How to use Kaniko and JFrog with GitHub Actions
 permalink: /articles/kaniko-jfrog.html
-tags: kaniko, jfrog, github, actions, artifactory, devops, docker, ci, cd, github-actions
+tags: kaniko  jfrog  github  actions  artifactory  devops  docker  ci  cd  github-actions
 lang: en
 key: how-to-use-kaniko-and-jfrog-with-github-actions
 ---
-
-# How to use Kaniko and JFrog Artifactory with GitHub Actions
 
 ## Introduction
 
