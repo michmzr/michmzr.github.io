@@ -8,10 +8,10 @@ key:  new-tag-without-push-jfrog-aws-ecr
 ---
 Hi  ✋,
 
-I was recently working on signing docker images and I found a performance issue. In order to sign the image,
-I had to pull the image from the registry, calculate hash and create signature file, and push new tag to artifactory. This process was taking a lot of time, especially when the image was large. I was looking for a way to optimize this process.
+I was recently working on signing Docker images and found a performance issue. In order to sign the image,
+I had to pull the image from the registry, calculate the hash and create the signature file, and push the new tag to artifactory. This process took a lot of time, especially if the image was large. I was looking for a way to optimise this process.
  <!--more-->
-I found a hack how to create remotely new tag on JFrog and AWS ECR docker repositories without pulling and pushing the image. It's a simple trick, but it can save you a lot of time. I will show you example how to do it on Github Actions
+I found a hack to remotely create new tags on JFrog and AWS ECR docker repositories without pulling and pushing the image. It's a simple trick, but it can save you a lot of time. I will show you an example of how to do it on Github Actions
 
 ## Classic method
 
