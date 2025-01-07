@@ -11,7 +11,7 @@ titles:
 key: consultations
 ---
 
-Are you looking to elevate your skills and forge a path in IT? With over 14 years of experience as a technical generalist in high-impact environments—including roles at giants like Goldman Sachs, Cisco, and Procter & Gamble—I bring a wealth of knowledge and a hands-on approach to teaching. Whether you're starting out or seeking to refine your expertise, my personalized consultation sessions are designed to transform your understanding and application of technology.
+Are you looking to elevate your skills and forge a path in IT? With over 14 years of experience as a technical generalist in high-impact environments—including roles and cooperation with giants like Cisco,and Procter & Gamble—I bring a wealth of knowledge and a hands-on approach to teaching. Whether you're starting out or seeking to refine your expertise, my personalized consultation sessions are designed to transform your understanding and application of technology.
 
 ## My expertise includes:
 - **Software Architecture**: Master the art of design and analysis.
