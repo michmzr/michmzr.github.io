@@ -2,7 +2,7 @@
 layout: article
 title: How to create new docker image tag without push on JFrog and AWS ECR
 permalink: new-tag-without-push-jfrog-aws-ecr.html
-tags: docker, jfrog, artifactory, ecr, aws, tag, push, pull, image, container, registry
+tags: docker jfrog artifactory ecr aws tag push pull image container registry
 lang: en
 key:  new-tag-without-push-jfrog-aws-ecr
 ---
