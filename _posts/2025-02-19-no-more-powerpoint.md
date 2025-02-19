@@ -89,8 +89,8 @@ Imagine having a dedicated team member who:
 # Short Live Demo Time! 🎬
 ```
 
-In a result you can get sth like that
-{% pdf "../assets/images/posts/no-more-powerpoint/marp_example.pdf" %}
+In a result you can get sth like that in PDF format:
+[pdf](../assets/images/posts/no-more-powerpoint/marp_example.pdf)
 
 ## Links
 - **Marpit:** [https://marpit.marp.app/](https://marpit.marp.app/)
