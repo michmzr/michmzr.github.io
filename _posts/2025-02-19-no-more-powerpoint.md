@@ -9,6 +9,7 @@ key: no-more-powerpoint
 Last week, I was tasked with giving a presentation on "Dependabot" - a tool for automatically updating dependencies in projects.
 
 After the last presentations, I felt tired of PowerPoint and decided to do something different.
+<!--more-->
 
 ## Why I got tired of PowerPoint
 
@@ -18,7 +19,7 @@ I don't like frontend development, I'm not a designer.
 I prefer to focus on the content, not the layout, pixels.
 I a presentation that was simple and minimalistic.
 
-![](../assets/images/posts/no-more-powerpoint/meme-the-office.jpg)
+<img src="../assets/images/posts/no-more-powerpoint/meme-the-office.jpg" alt="The Office meme" class="image image--md" style="display: block; margin-left: auto; margin-right: auto;" />
 
 ## Marp - a simple solution
 
@@ -89,11 +90,11 @@ Imagine having a dedicated team member who:
 ```
 
 In a result you can get sth like that
-![](../assets/images/posts/no-more-powerpoint/marp-example.gif)
+{% pdf "../assets/images/posts/no-more-powerpoint/marp_example.pdf" %}
 
 ## Links
-- **Marpit:** https://marpit.marp.app/
-- **Marp for VS Code:** https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode
+- **Marpit:** [https://marpit.marp.app/](https://marpit.marp.app/)
+- **Marp for VS Code:** [https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode](https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode)
 
 ## Wrap-up
 I hope the article at least intrigued you, you learned something new.
