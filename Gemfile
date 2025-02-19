@@ -5,7 +5,7 @@ gem 'tzinfo-data', '~> 1.2021', '>= 1.2021.5'
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 
 group :jekyll_plugins do
-  gem "jekyll-pdf-embed"
+#   gem "jekyll-pdf-embed"
   gem "github-pages"
 end
 
