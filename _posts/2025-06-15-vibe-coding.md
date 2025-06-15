@@ -14,7 +14,9 @@ Doing it right? Still hard. It still requires knowledge and skills. But it's eas
 I put together a few practical tips for builders of new era.
 
 ## Presentation
-{% pdf  ../assets/docs/li-vibe-coding.pdf %}
+<embed src="../assets/docs/li-vibe-coding.pdf" type="application/pdf" width="100%" height="600px" />
+
+[Download PDF](../assets/docs/li-vibe-coding.pdf)
 
 ## Fast tips for you
 ### Security
