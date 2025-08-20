@@ -6,7 +6,7 @@ layout: page
 
 ## About me
 
-:wave: Hello World!
+:wave: Hello!
 
 My name is Michał Mazur and this is my technical blog or my library with my thoughts, case studies from my career, tutorials etc.
 I cover a wide range of topics like productivity, projekt management, devops, programming, software architecture etc.
@@ -23,6 +23,7 @@ At work, I deal with it on a daily basis with:
 - Java/Kotlin
 - Python 3
 - Javascript / Typescript
+- AI + No code automations on n8n/make.com
 
 I love to learn, jump on the chance to challenge my skills on difficult subjects.
 
