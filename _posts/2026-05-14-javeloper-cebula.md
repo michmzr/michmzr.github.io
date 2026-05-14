@@ -7,14 +7,11 @@ lang: en
 key: javeloper-2026-zrob-cebulowego-sassa-notatki-prelegenta
 ---
  
-# Zrób se cebulowego SaaSa, czyli cebularstwo stosowane w projektach IT - notatki prelegenta
-
 Na stronie znajdziesz moja prezentacje z konferencji ["Javeloper 2026"](https://javeloper.pl/#okonferencji) jak i myślę przydatne linki uzupełniające.  
 
 ## Prezentacja
-**Markdown (Marpit):**
-
 **PDF:**
+[prezentacja](/assets/docs/prezentacja.pdf)
 
 ## Linki
 
@@ -121,7 +118,7 @@ Na stronie znajdziesz moja prezentacje z konferencji ["Javeloper 2026"](https://
 ### Materiały, inspiracje i incydenty
 
 - [Podcast PatoArchitekci.io - #155 Bieda-hosting, czyli miejsce na MVP, Side Projects i inne nasze zabawki](https://patoarchitekci.io/155/)
-- [Jakub Mrugalski - A gdyby tak zrobić startup w weekend? - no-code, AI i odrobina magii | Infoshare](https://www.youtube.com/watch?v=dYzfArtf7qU)
+- [Jakub Mrugalski - A gdyby tak zrobić startup w weekend?](https://www.youtube.com/watch?v=dYzfArtf7qU)
 - [GitLab.com outage 2017 - postmortem](https://about.gitlab.com/blog/postmortem-of-database-outage-of-january-31/)
 - [Pożar OVHcloud Strasbourg 2021](https://corporate.ovhcloud.com/en/newsroom/news/informations-site-strasbourg/)
 - [Lenny's Product Pass](https://www.lennysnewsletter.com/p/productpass)
