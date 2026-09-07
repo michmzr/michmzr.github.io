@@ -2,7 +2,7 @@
 layout: article
 title: "Zrób se cebulowego SaaSa, czyli cebularstwo stosowane w projektach IT - notatki prelegenta"
 permalink: /javeloper-2026-zrob-cebulowego-sassa-notatki-prelegenta.html
-tags: devops cloud home-lab presentation 
+tags: devops cloud home-lab presentation side-project ai
 lang: en
 key: javeloper-2026-zrob-cebulowego-sassa-notatki-prelegenta
 ---

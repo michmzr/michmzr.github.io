@@ -34,6 +34,8 @@ The software we use can greatly influence our productivity. Here are the apps an
 - **Note-taking:** Obsidian (my second brain), Notion (for collaboration and some note-taking), Readwise
 - **Task Management:** Todoist
 - **Link Saving:** Instapaper, Readwise
+- **AI Harness:** ChatGPT + Cursor, Cursor, OpenClaw
+- **AI licences:** OpenAI 100$, OpenRouter (pay by usage)
 - **Clipboard Management:** Paste for macOS
 
 ## Automation Tools
@@ -55,6 +57,6 @@ Sharing my knowledge and experiences is important to me. Here's what I use to pu
 Managing finances is a crucial part of freelancing. I use these tools to handle payments and transfers:
 
 - **Payments:** Revolut
-- **International Money Transfers:** Revolut, Wise
+- **International Money Transfers:** Revolut
 
 I hope you found this page helpful! If you have any questions about these tools, feel free to reach out. Remember, the most important thing is to find what works best for you and your workflow. Happy coding!
