@@ -7,7 +7,9 @@ lang: pl
 key: confitura-2026-resilience-w-erze-ai-notatki-prelegenta
 ---
 
-To wstępne notatki do mojego wystąpienia na <a href="https://confitura.pl/" rel="nofollow">Confiturze 2026</a>. Wystąpię w piątek, 25 września 2026 r. o godz. 14:30. Pytanie z tytułu jest prowokacją. Nie znam sposobu na zagwarantowanie sobie zatrudnienia, ale można zwiększać liczbę dostępnych opcji i szybciej reagować na zmianę.
+To notatki do mojego wystąpienia na <a href="https://confitura.pl/" rel="nofollow">Confiturze 2026</a>. Wystąpiłem w piątek, 25 września 2026 r. o godz. 14:30. 
+
+Pytanie z tytułu jest prowokacją ;)  Nie znam sposobu na zagwarantowanie zatrudnienia na godnych i słusznych warunkach, ale wiem ze można zwiększać liczbę dostępnych opcji i szybciej reagować na zmianę.
 
 Przez *resilience* rozumiem zdolność do realizowania celów, gdy zmieniają się warunki. W pracy developera oznacza to regularne sprawdzanie, gdzie powstaje wartość i które umiejętności warto rozwijać.
 
@@ -37,7 +39,7 @@ Proponuję regularnie wracać do czterech kroków: **Observe** - zbieranie sygna
 
 Przykład: przez cztery tygodnie przejąć odpowiedzialność za jeden problem, od rozpoznania potrzeby do oceny efektu na produkcji. Działania obejmują doprecyzowanie wymagań, ustalenie kryteriów akceptacji, oddelegowanie części implementacji AI i sprawdzenie rezultatu. Potem pętla wraca do obserwacji.
 
-Do zapisania takiego eksperymentu wystarczy prosty *work log*: plan na dzień, osiągnięty rezultat, nowa wiedza i napotkane blokady. Po tygodniu można przejrzeć zapisy. Szerzej opisałem ten sposób pracy we [wpisie o work logu](/work-log-career-10x.html).
+Do zapisania takiego eksperymentu wystarczy prosty *work log*: plan na dzień, osiągnięty rezultat, nowa wiedza i napotkane blokady. Po tygodniu warto przejrzeć zapisy. Szerzej opisałem ten sposób pracy we [wpisie o work logu](/work-log-career-10x.html).
 
 ## Ankieta po prezentacji
 
