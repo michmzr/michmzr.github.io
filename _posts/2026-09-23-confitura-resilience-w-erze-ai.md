@@ -15,6 +15,15 @@ Przez *resilience* rozumiem zdolność do realizowania celów, gdy zmieniają si
 
 <!--more-->
 
+## Prezentacja
+**PDF:**
+[prezentacja](/assets/docs/confitura-2026-resilience-prezentacja.pdf)
+
+## Ankieta
+<iframe src="https://tally.so/embed/KYbxek?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" data-tally-src="https://tally.so/embed/KYbxek?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="1358" frameborder="0" marginheight="0" marginwidth="0" title="Confitura 2026 - Prezentacja Resilience w erze AI"></iframe>
+<script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+
+
 ## Rynek i produktywność z AI
 
 Zmiany na rynku pracy zaczęły się przed upowszechnieniem generatywnego AI. Samo pytanie „czy AI zastąpi developerów?” niewiele pomaga w podjęciu decyzji zawodowej. Ważniejsze jest to, jakie zadania się zmieniają, w jakim środowisku i z jakim kosztem błędu.
