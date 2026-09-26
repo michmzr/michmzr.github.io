@@ -7,7 +7,7 @@
   <meta name="robots" content="noindex, nofollow">
   <meta name="design-source-sha256" content="<%= digest %>">
   <title>CyberShu · style guide</title>
-  <link rel="icon" href="data:,">
+  <link rel="icon" href="../assets/favicon.svg">
   <style>
 <%= read('tools/style-guide/base.css') %>
 <%= css %>
@@ -43,6 +43,7 @@
           <tr><th scope="row">Archive filtering and search</th><td>Interactive search (results, empty, clear, Escape); static selected archive filter and empty state</td></tr>
           <tr><th scope="row">Consultations and booking</th><td>Representative learning path, pricing, booking CTA and static provider fallback; actual form tested separately</td></tr>
           <tr><th scope="row">Conference resources</th><td>Download and Polish Tally wrapper states in the production specimen; PDF viewing checked on the actual page</td></tr>
+          <tr><th scope="row">Icons and favicons</th><td>Shared production SVGs and 16/32/180px identity assets; browser metadata and platform selection require production checks</td></tr>
           <tr><th scope="row">Contact</th><td>Primary email action and secondary LinkedIn, X and GitHub links with decorative icons in the production specimen; shared CSS supports responsive inspection</td></tr>
           <tr><th scope="row">About, Uses and 404</th><td>Reading-layout excerpts and 404 recovery actions in the production specimen</td></tr>
         <tr><th scope="row">Footer and cookies</th><td>Shared footer, compact equal-choice panel, expanded disclosure; consent persistence tested on the website</td></tr></tbody></table></div>
@@ -52,8 +53,8 @@
     <section id="identity" aria-labelledby="identity-title">
       <div class="section-heading"><p class="index">01 / Identity</p><h2 id="identity-title" data-type="heading">One identity across the website</h2></div>
       <div class="two-column logo-treatments">
-        <div class="panel dark"><p class="eyebrow">Logo on a dark surface</p><p class="brand" data-component="wordmark">Cyber<span data-component="wordmark-accent">Shu</span></p><p data-component="hero-description">Updated wordmark and brand palette.</p></div>
-        <div class="panel bordered"><p class="eyebrow">Logo on a reading surface</p><p class="brand" data-type="wordmark">CyberShu</p><p data-component="metadata">Single-color treatment for a light background.</p></div>
+        <div class="panel dark"><p class="eyebrow">Logo on a dark surface</p><p class="brand" data-component="wordmark"><img class="brand-mark" src="../assets/images/logo/cs-monogram.svg" width="64" height="42" alt="CS monogram"><span>Cyber<span data-component="wordmark-accent">Shu</span></span></p><p data-component="hero-description">Approved CS ligature with the CyberShu wordmark.</p></div>
+        <div class="panel bordered"><p class="eyebrow">Logo on a reading surface</p><p class="brand" data-type="wordmark"><img class="brand-mark" src="../assets/images/logo/logo.svg" width="64" height="64" alt="CS monogram on navy"> CyberShu</p><p data-component="metadata">Navy wordmark with the two-color mark on a navy field.</p></div>
       </div>
       <div class="website-specimen">
         <div class="specimen-heading"><p class="eyebrow">Editorial website specimen</p><a href="#content">Explore article elements ↗</a></div>

@@ -174,6 +174,14 @@ The website's composition can be redesigned: header arrangement, article-list pr
 
 Brand slogans and portrait images are optional material, not required website components. Choose website copy and imagery for the page's task. The printed card's target audience and content exclusions do not redefine the website's positioning. A portrait can support an author profile or consultation introduction when useful; it is not a mandatory homepage hero.
 
+### Icons and browser identity
+
+Functional icons share a 24-unit SVG grid, a 1.5-unit stroke, round caps and joins, and `currentColor`. Render them at 1em alongside visible labels; contact artwork may use 24px. Decorative SVGs have `aria-hidden="true"` and `focusable="false"`. Use the shared files in `_includes/icons/` for search, menu, dismissal, arrows and RSS. Social logos retain their recognizable silhouettes and inherit the surrounding text color.
+
+The user approved the two-color CS ligature on 2026-09-26. Cream C and orange S share coordinated curves and separated, angled terminals. `assets/images/logo/cs-monogram.svg` is the vector master. Use the transparent monogram beside the CyberShu wordmark in the header and footer, through `_includes/brand.html`. The mark is decorative within the named home link; keep its image alternative empty to avoid duplicate announcements. The monogram is approximately 48 × 32px beside a 28px wordmark and scales with text. Preserve the aspect ratio and clear space between the mark and wordmark. When enlarged text leaves insufficient inline space, wrap the wordmark below the monogram instead of clipping or shrinking the name.
+
+For browser and device icons, center the same monogram on a navy rounded square. On light backgrounds, retain a navy field behind the two-color mark; the wordmark may be navy. Use a monochrome silhouette only where the platform requires it, including Safari pinned tabs. The root favicon and manifest remain compatible entry points. Regenerate SVG derivatives, PNG, ICO and the 1200 × 630px social preview with `python3 tools/generate-icons.py` (requires `rsvg-convert` and uses the local licensed Inter Bold font for the social wordmark). All shapes derive from the master; do not redraw individual sizes. The manifest uses paths relative to itself, and HTML metadata respects the configured base URL. Browser chrome and tiles use navy; the manifest background uses cream. The default Open Graph and X preview uses `assets/images/logo/social-card.png`; preserve article-specific imagery when configured.
+
 ## Colors
 
 YAML values are the current shared implementation baseline. Use shared tokens instead of introducing page-specific copies. The core brand palette is an identity input; supporting color roles and their application are website decisions subject to contrast checks.
@@ -215,7 +223,7 @@ Tokens describe the initial wide-screen scale. The current preview switches belo
 
 Headings use weight 600; the wordmark and author's name may use 700. Supporting text uses 400. Print point sizes must not be transferred directly to the screen. Do not scale the page as a bitmap of the card.
 
-The wordmark is `CyberShu`, without a space. On navy, “Cyber” is cream and “Shu” orange, sharing a baseline. On a light surface, use a navy wordmark or a navy field behind the two-color version. Do not introduce “CS” as a replacement mark.
+The wordmark is `CyberShu`, without a space. On navy, “Cyber” is cream and “Shu” orange, sharing a baseline. On a light surface, use a navy wordmark or a navy field behind the two-color version. The approved CS ligature accompanies this wordmark in site navigation and stands alone in small browser and device contexts.
 
 Preserve natural sentence case. Uppercase QR labels do not establish a rule for website navigation. Choose heading width and line breaks for the actual page content; do not force brand slogans or print line breaks into page titles. Code uses the `code` monospace stack; preserve indentation, selectable content and local horizontal scrolling for long lines.
 
@@ -270,13 +278,13 @@ Overlay content must remain legible and distinguishable from the page beneath it
 
 The current web baseline uses 0px corner radius for sections and content panels. Image treatment is selected for its context; no portrait-frame requirement is inherited from print. Buttons and fields use the web-specific 4px control radius. These radii are adjustable, including rounded or pill-shaped filter controls where useful. Shape must not be the only indication of selection or interactivity.
 
-Do not invent a new logo or substitute a monogram for the supplied CyberShu wordmark. Decorative patterns are optional website design choices, not requirements inherited from historical print variants. Functional icons must use a consistent visual style and accessible names. Preserve technology names and existing security content.
+Use the approved CS ligature and CyberShu wordmark as the shared identity. Do not substitute unrelated symbols or redraw the monogram per component. Decorative patterns are optional website design choices, not requirements inherited from historical print variants. Functional icons must use a consistent visual style and accessible names. Preserve technology names and existing security content.
 
 ## Components
 
 ### Site identity and page introductions
 
-Render the wordmark as text or an accessible vector with the home-link name “CyberShu”. The initial navigation uses cream on navy; a light-header variant uses accessible dark text. The current destination needs a visible non-color cue and `aria-current`.
+Render the monogram with the text wordmark and the home-link name “CyberShu home”. The initial navigation uses cream on navy; a light-header variant uses accessible dark text. The current destination needs a visible non-color cue and `aria-current`.
 
 The site header and logo establish shared identity. Page introductions then explain the page's purpose: an article title, an archive heading, a service introduction or profile information. The `hero` token describes an optional high-emphasis web surface, not a prescribed composition. A hero can be text-only; no portrait, slogan, signature block or 2:1 grid is required. Demonstrations must use website tasks and content rather than recreating the front of the card.
 

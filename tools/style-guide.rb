@@ -85,7 +85,8 @@ class StyleGuide
     paths = ['docs/DESIGN.md', 'tools/style-guide.rb'] +
             Dir.glob(File.join(@root, 'tools/style-guide/*')).map { |path| path.delete_prefix(@root + '/') } +
             Dir.glob(File.join(@root, '_sass/cybershu/*.scss')).map { |path| path.delete_prefix(@root + '/') } +
-            %w[assets/js/site.js assets/js/discovery.js]
+            Dir.glob(File.join(@root, '_includes/icons/*.svg')).map { |path| path.delete_prefix(@root + '/') } +
+            %w[assets/favicon.svg assets/images/logo/cs-monogram.svg _includes/brand.html assets/js/site.js assets/js/discovery.js]
     Digest::SHA256.hexdigest(paths.sort.map { |path| path + "\0" + read(path) }.join("\0"))
   end
 
@@ -96,6 +97,7 @@ class StyleGuide
     styles = styles.gsub('../fonts/', '../assets/fonts/')
     read('tools/style-guide/website.html').sub('PRODUCTION_STYLES', styles)
       .sub('PRODUCTION_SCRIPTS', read('assets/js/site.js') + "\n" + read('assets/js/discovery.js'))
+      .gsub(/ICON_([A-Z_]+)/) { read("_includes/icons/#{Regexp.last_match(1).downcase.tr('_', '-')}.svg") }
   end
 
   def render

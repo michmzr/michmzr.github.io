@@ -14,7 +14,7 @@ layout: base
       {% include snippets/get-article-title.html article=page %}
       <h1>{{ __return }}</h1>
       {% if page.date %}{% include article-info.html article=page %}{% endif %}
-      {% if page.show_edit_on_github %}<a class="edit-link" lang="en" href="https://github.com/{{ site.repository }}/tree/{{ site.repository_tree }}/{{ page.path }}">View source ↗</a>{% endif %}
+      {% if page.show_edit_on_github %}<a class="edit-link" lang="en" href="https://github.com/{{ site.repository }}/tree/{{ site.repository_tree }}/{{ page.path }}">View source {% include icons/arrow-up-right.svg %}</a>{% endif %}
     </header>
   {% endunless %}
   {% if page.aside.toc %}<div class="reading-grid"><aside class="article-toc" data-toc data-toc-selectors="{{ site.toc.selectors | default: site.data.variables.default.toc.selectors | escape }}" hidden><details open><summary>{% if page.lang == 'pl' %}Na tej stronie{% else %}On this page{% endif %}</summary><nav aria-label="Table of contents"><ol></ol></nav></details></aside>{% endif %}

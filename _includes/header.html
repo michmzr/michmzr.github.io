@@ -1,9 +1,9 @@
 <header class="site-header" lang="en">
   <div class="site-container header-inner">
-    <a class="brand" href="{{ '/' | relative_url }}" aria-label="CyberShu home">Cyber<span>Shu</span></a>
+    {% include brand.html %}
     <div class="header-actions">
-      {% if site.search.provider %}<button class="search-trigger" data-search-open aria-haspopup="dialog">Search <span aria-hidden="true">↗</span></button>{% endif %}
-      <button class="menu-toggle" data-menu-toggle aria-expanded="false" aria-controls="site-navigation" hidden>Menu <span aria-hidden="true">+</span></button>
+      {% if site.search.provider %}<button class="search-trigger" data-search-open aria-haspopup="dialog">Search {% include icons/search.svg %}</button>{% endif %}
+      <button class="menu-toggle" data-menu-toggle aria-expanded="false" aria-controls="site-navigation" hidden>Menu {% include icons/menu.svg %}</button>
     </div>
     <nav id="site-navigation" class="site-navigation" aria-label="Main navigation">
       <a href="{{ '/' | relative_url }}" {% if page.layout == 'home' %}aria-current="page"{% endif %}>Articles</a>

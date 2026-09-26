@@ -4,8 +4,10 @@
 .site-header { border-bottom: 2px solid var(--orange); }
 .site-header :focus-visible, .site-footer :focus-visible { outline-color: var(--cream); }
 .header-inner { min-height: 100px; display: flex; align-items: center; justify-content: space-between; gap: var(--xl); }
-.brand { display: inline-block; flex-shrink: 0; font-size: 1.75rem; line-height: 1.2; font-weight: 700; letter-spacing: -.02em; text-decoration: none; }
-.brand span { color: var(--orange); }
+.brand { display: inline-flex; flex-wrap: wrap; max-width: 100%; align-items: center; gap: 12px; min-height: 44px; flex-shrink: 0; font-size: 1.75rem; line-height: 1.2; font-weight: 700; letter-spacing: -.02em; text-decoration: none; }
+.brand-accent { color: var(--orange); }
+.brand-wordmark { white-space: nowrap; }
+.brand-mark { display: block; flex: 0 0 auto; width: 1.714286em; height: auto; }
 .header-actions { order: 3; display: flex; gap: var(--sm); }
 .header-actions button { color: var(--cream); border-color: var(--muted); }
 .header-actions button:hover { background: var(--cream); color: var(--navy); }
