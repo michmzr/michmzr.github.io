@@ -184,6 +184,7 @@ highlighter : rouge
 permalink   : date
 
 exclude:
+  - AGENTS.md
   - CHANGELOG.md
   - HOW_TO_RELEASE.md
   - Gemfile
@@ -196,6 +197,7 @@ exclude:
   - package-lock.json
   - package.json
   - /docs
+  - /tools
   - /node_modules
   - /screenshots
   - /test

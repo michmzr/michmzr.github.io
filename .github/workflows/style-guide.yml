@@ -1,0 +1,32 @@
+name: Style guide
+
+on:
+  push:
+    paths:
+      - 'docs/DESIGN.md'
+      - 'docs/style-guide.html'
+      - 'docs/design-reference/**'
+      - 'tools/style-guide*'
+      - 'tools/style-guide/**'
+      - '.github/workflows/style-guide.yml'
+  pull_request:
+    paths:
+      - 'docs/DESIGN.md'
+      - 'docs/style-guide.html'
+      - 'docs/design-reference/**'
+      - 'tools/style-guide*'
+      - 'tools/style-guide/**'
+      - '.github/workflows/style-guide.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Check generated style guide
+        run: ruby tools/style-guide.rb --check
