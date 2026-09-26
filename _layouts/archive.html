@@ -1,39 +1,16 @@
 ---
 layout: page
-titles:
-  # @start locale config
-  en      : &EN       Archive
-  en-GB   : *EN
-  en-US   : *EN
-  en-CA   : *EN
-  en-AU   : *EN
-  zh-Hans : &ZH_HANS  归档
-  zh      : *ZH_HANS
-  zh-CN   : *ZH_HANS
-  zh-SG   : *ZH_HANS
-  zh-Hant : &ZH_HANT  歸檔
-  zh-TW   : *ZH_HANT
-  zh-HK   : *ZH_HANT
-  ko      : &KO       아카이브
-  ko-KR   : *KO
-  fr      : &FR       Archives
-  fr-BE   : *FR
-  fr-CA   : *FR
-  fr-CH   : *FR
-  fr-FR   : *FR
-  fr-LU   : *FR
-  # @end locale config
+title: Archive
 ---
-
-<div class="layout--archive js-all">
-  {%- include tags.html -%}
-  <div class="js-result layout--archive__result d-none">
-    {%- include article-list.html articles=site.posts type='brief' show_info=true reverse=true group_by='year' -%}
+<div data-archive>
+  <p class="archive-intro">{{ site.posts | size }} articles. Browse by topic or explore the complete collection.</p>
+  <details class="topic-picker"><summary>Filter by topic <span data-filter-label>All topics</span></summary>
+  <div class="archive-filters" role="group" aria-label="Filter by topic">
+    <button data-tag="" aria-pressed="true">Show all <span>{{ site.posts | size }}</span></button>
+    {% assign sorted_tags = site.tags | sort %}{% for tag in sorted_tags %}<button data-tag="{{ tag[0] | escape }}" aria-pressed="false">{{ tag[0] }} <span>{{ tag[1] | size }}</span></button>{% endfor %}
   </div>
+  </details>
+  <p class="archive-status" role="status" aria-live="polite" data-archive-status>{{ site.posts | size }} articles</p>
+  <div class="archive-years">{% assign years = site.posts | group_by_exp: 'post', 'post.date | date: "%Y"' %}{% for year in years %}<section class="archive-year" data-year><h2>{{ year.name }}</h2><div>{% for post in year.items %}<article class="archive-entry" data-archive-entry data-tags="{{ post.tags | jsonify | escape }}" lang="{{ post.lang | default: site.lang }}"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%d %b' }}</time><h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3></article>{% endfor %}</div></section>{% endfor %}</div>
 </div>
-
-<script>
-  {%- include scripts/archieve.js -%}
-</script>
-
 {{ content }}

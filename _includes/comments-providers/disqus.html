@@ -1,22 +1,10 @@
-{%- if page.key and
-  site.comments.disqus.shortname -%}
-
-  <div id="disqus_thread"></div>
-  <script>
-  /**
-  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-  var disqus_config = function () {
-    this.page.url = '{%- include snippets/page-url.html -%}';
-    this.page.identifier = '{{ page.key }}';
-  };
-  (function() { // DON'T EDIT BELOW THIS LINE
-    var d = document, s = d.createElement('script');
-    s.src = 'https://{{ site.comments.disqus.shortname }}.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-  })();
-  </script>
-  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
-{%- endif -%}
+{% if site.comments.disqus.shortname %}
+<div class="provider-panel" data-provider="Disqus" data-provider-auto lang="en">
+  <h2>Comments</h2>
+  <div class="provider-placeholder"><p>Comments are hosted by Disqus. Loading them connects to an external service.</p><button data-provider-load>Load comments</button></div>
+  <p class="provider-fallback"><a href="https://disqus.com/home/forums/{{ site.comments.disqus.shortname }}/" target="_blank" rel="noopener noreferrer">Open Disqus ↗</a></p><p class="provider-status" role="status"></p>
+  <template><div id="disqus_thread"></div><script>
+    var disqus_config = function () { this.page.url = {{ page.url | absolute_url | jsonify }}; this.page.identifier = {{ page.key | default: page.url | jsonify }}; };
+  </script><script src="https://{{ site.comments.disqus.shortname }}.disqus.com/embed.js" async></script></template>
+</div>
+{% endif %}

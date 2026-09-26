@@ -83,8 +83,19 @@ class StyleGuide
 
   def fingerprint
     paths = ['docs/DESIGN.md', 'tools/style-guide.rb'] +
-            Dir.glob(File.join(@root, 'tools/style-guide/*')).map { |path| path.delete_prefix(@root + '/') }
+            Dir.glob(File.join(@root, 'tools/style-guide/*')).map { |path| path.delete_prefix(@root + '/') } +
+            Dir.glob(File.join(@root, '_sass/cybershu/*.scss')).map { |path| path.delete_prefix(@root + '/') } +
+            %w[assets/js/site.js assets/js/discovery.js]
     Digest::SHA256.hexdigest(paths.sort.map { |path| path + "\0" + read(path) }.join("\0"))
+  end
+
+  # Production partials deliberately contain plain CSS, so specimens share them
+  # without requiring Sass or a Jekyll build. Font URLs are relative to docs/.
+  def production_specimen
+    styles = %w[foundation shell content controls].map { |name| read("_sass/cybershu/#{name}.scss") }.join("\n")
+    styles = styles.gsub('../fonts/', '../assets/fonts/')
+    read('tools/style-guide/website.html').sub('PRODUCTION_STYLES', styles)
+      .sub('PRODUCTION_SCRIPTS', read('assets/js/site.js') + "\n" + read('assets/js/discovery.js'))
   end
 
   def render

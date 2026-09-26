@@ -20,3 +20,5 @@ header:
       en      : &EN       About
       # @end locale config
     url: /about.html
+  - title: Contact
+    url: /contact.html

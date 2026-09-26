@@ -2,28 +2,12 @@
 layout: page
 type: article
 ---
-
-{%- include snippets/assign.html
-  target = site.data.variables.default.page.sharing
-  source0=layout.sharing source1=page.sharing -%}
-{%- assign _sharing = __return -%}
-
-<div class="layout--article">
-  {%- include article/top/custom.html -%}
-
+<article class="layout--article" itemscope itemtype="https://schema.org/Article">
+  <meta itemprop="headline" content="{{ page.title | escape }}">
+  <meta itemprop="author" content="{{ site.author.name }}">
+  <meta itemprop="datePublished" content="{{ page.date | date_to_xmlschema }}">
   <div class="article__content" itemprop="articleBody">{{ content }}</div>
-
-  {%- if _sharing -%}
-    <section class="article__sharing d-print-none">{%- include sharing.html -%}</section>
-  {%- endif -%}
-
-  <div class="d-print-none">
-    {%- include article-footer.html -%}
-    {%- include article-section-navigator.html -%}
-  </div>
-
-</div>
-
-<script>
-  {%- include scripts/article.js -%}
-</script>
+  {% if page.sharing %}<section class="article__sharing" aria-label="Share article" lang="en">{% include sharing.html %}</section>{% endif %}
+  {% include article-footer.html %}
+  {% include article-section-navigator.html %}
+</article>

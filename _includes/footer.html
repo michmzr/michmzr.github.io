@@ -1,37 +1,11 @@
-
-<footer class="footer py-4 js-page-footer">
-  <div class="main">
-
-    {%- assign _site_author = site.author -%}
-    {%- if _site_author.type == 'organization' -%}
-      {%- assign _site_author_itemtype = 'http://schema.org/Organization' -%}
-    {%- else -%}
-      {%- assign _site_author_itemtype = 'http://schema.org/Person' -%}
-    {%- endif -%}
-
-    <div itemscope itemtype="{{ _site_author_itemtype }}">
-      <meta itemprop="name" content="{{ _site_author.name }}">
-      {%- assign _site_author_url = _site_author.url | default: '/'-%}
-      {%- include snippets/get-nav-url.html path=_site_author_url -%}
-      {%- assign _site_author_url = __return -%}
-      <meta itemprop="url" content="{{ _site_author_url }}">
-      {%- if _site_author.bio -%}
-        <meta itemprop="description" content="{{ _site_author.bio }}">
-      {%- endif -%}
-      <div class="footer__author-links">
-        {%- include author-links.html author=_site_author -%}
-      </div>
+<footer class="site-footer" lang="en">
+  <div class="site-container">
+    <div class="footer-grid">
+      <div><a class="brand" href="{{ '/' | relative_url }}">Cyber<span>Shu</span></a><p>Michał Mazur<br><span class="muted-dark">{{ site.author.bio }}</span></p></div>
+      <nav aria-label="Footer navigation"><h2>Explore</h2><a href="{{ '/' | relative_url }}">Articles</a><a href="{{ '/archive.html' | relative_url }}">Archive</a><a href="{{ '/uses.html' | relative_url }}">Uses</a></nav>
+      <nav aria-label="Contact and profile"><h2>Get in touch</h2><a href="{{ '/contact.html' | relative_url }}">Contact</a><a href="{{ '/consultations.html' | relative_url }}">Consultations</a><a href="{{ '/about.html' | relative_url }}">About</a><a href="https://www.linkedin.com/in/{{ site.author.linkedin }}">LinkedIn ↗</a></nav>
+      <nav aria-label="Social links"><h2>Elsewhere</h2><a href="https://github.com/{{ site.author.github }}">GitHub ↗</a><a href="https://twitter.com/{{ site.author.twitter }}">X / Twitter ↗</a><a href="{{ '/feed.xml' | relative_url }}">RSS feed ↗</a></nav>
     </div>
-    {%- include snippets/get-locale-string.html key='COPYRIGHT_DATES' -%}
-    {%- assign _locale_copyright_dates = __return -%}
-    <div class="site-info mt-2">
-      <div>
-        {%- include snippets/get-locale-string.html key='COPYRIGHT_DATES' -%}
-        {%- assign _locale_copyright_dates = __return -%}
-        © {{ site.title }} {{ _locale_copyright_dates }},
-        Powered by <a title="Jekyll is a simple, blog-aware, static site generator." href="http://jekyllrb.com/">Jekyll</a> & <a
-        title="TeXt is a super customizable Jekyll theme." href="https://github.com/kitian616/jekyll-TeXt-theme">TeXt Theme</a>.
-      </div>
-    </div>
+    <div class="footer-bottom"><p>© {{ site.time | date: '%Y' }} {{ site.title }} · Michał Mazur</p><button class="text-button" data-cookie-settings>Cookie settings</button><p>Built with <a href="https://jekyllrb.com/">Jekyll</a> · <a href="https://github.com/kitian616/jekyll-TeXt-theme">TeXt</a></p></div>
   </div>
 </footer>

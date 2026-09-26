@@ -1,6 +1,6 @@
 ---
 layout: page
-titles:  My Developer Setup - The Tools I Use
+title: My Developer Setup - The Tools I Use
 # @start locale config
 en      : &EN       Uses
 en-GB   : *EN

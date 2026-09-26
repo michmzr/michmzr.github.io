@@ -13,6 +13,10 @@ class StyleGuideTest < Minitest::Test
     FileUtils.cp(File.expand_path('../docs/DESIGN.md', __dir__), File.join(@root, 'docs'))
     FileUtils.cp(File.join(__dir__, 'style-guide.rb'), File.join(@root, 'tools'))
     FileUtils.cp_r(File.join(__dir__, 'style-guide'), File.join(@root, 'tools'))
+    FileUtils.mkdir_p(File.join(@root, '_sass'))
+    FileUtils.mkdir_p(File.join(@root, 'assets'))
+    FileUtils.cp_r(File.expand_path('../_sass/cybershu', __dir__), File.join(@root, '_sass'))
+    FileUtils.cp_r(File.expand_path('../assets/js', __dir__), File.join(@root, 'assets'))
     @guide = StyleGuide.new(@root)
     @output = File.join(@root, 'docs/style-guide.html')
     @source = File.join(@root, 'docs/DESIGN.md')
@@ -66,6 +70,15 @@ class StyleGuideTest < Minitest::Test
     html = @guide.render
     assert_includes html, '--mobile-display-size: 2.25rem;'
     assert_includes html, '[data-component="button-primary"]:hover:not(:disabled)'
+  end
+
+  def test_detects_production_stylesheet_and_interaction_drift
+    @guide.run
+    File.open(File.join(@root, '_sass/cybershu/content.scss'), 'a') { |file| file.puts '/* revised */' }
+    assert_raises(RuntimeError) { @guide.run(check: true) }
+    @guide.run
+    File.open(File.join(@root, 'assets/js/discovery.js'), 'a') { |file| file.puts '// revised' }
+    assert_raises(RuntimeError) { @guide.run(check: true) }
   end
 
   def test_render_is_deterministic

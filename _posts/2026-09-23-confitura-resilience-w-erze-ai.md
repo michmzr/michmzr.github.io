@@ -20,8 +20,7 @@ Przez *resilience* rozumiem zdolność do realizowania celów, gdy zmieniają si
 [prezentacja](/assets/docs/confitura-2026-resilience-prezentacja.pdf)
 
 ## Ankieta
-<iframe src="https://tally.so/embed/KYbxek?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" data-tally-src="https://tally.so/embed/KYbxek?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="1358" frameborder="0" marginheight="0" marginwidth="0" title="Confitura 2026 - Prezentacja Resilience w erze AI"></iframe>
-<script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+{% include provider.html name="Tally" lang="pl" url="https://tally.so/r/KYbxek" embed="https://tally.so/embed/KYbxek?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" title="Confitura 2026 - Prezentacja Resilience w erze AI" height="1358" %}
 
 
 ## Rynek i produktywność z AI
@@ -52,8 +51,7 @@ Do zapisania takiego eksperymentu wystarczy prosty *work log*: plan na dzień, o
 
 ## Ankieta po prezentacji
 
-<iframe src="https://tally.so/embed/KYbxek?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" data-tally-src="https://tally.so/embed/KYbxek?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="1358" frameborder="0" marginheight="0" marginwidth="0" title="Confitura 2026 - Prezentacja Resilience w erze AI"></iframe>
-<script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+{% include provider.html name="Tally" lang="pl" url="https://tally.so/r/KYbxek" embed="https://tally.so/embed/KYbxek?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" title="Confitura 2026 - Prezentacja Resilience w erze AI" height="1358" %}
 
 ## Linki
 

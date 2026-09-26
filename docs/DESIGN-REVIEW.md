@@ -1,5 +1,8 @@
 # Design documentation review
 
+This is the pre-implementation requirements audit from 2026-09-26. The subsequent production refactor and current verification evidence are recorded in [WEBSITE-REVIEW.md](WEBSITE-REVIEW.md). Its earlier “remaining work” statements describe the baseline, not the current implementation.
+
+
 Reviewed on 2026-09-26 against the working repository and a fresh build using the root `_config.yml`. The palette, typography and updated logo have a traceable branding source. The business-card project is inspiration and an asset source, not the design specification for the website. Before this review, the documentation and kitchen sink covered generic brand elements more thoroughly than the website's actual page families and interactions.
 
 The review updates the documentation and its language. It does not redesign production pages or change their copy, routes or external integrations. Priority P1 means a requirement to settle before a visual refactor; P2 means a coverage or maintenance gap. These are documentation findings, not claims of newly introduced production bugs.

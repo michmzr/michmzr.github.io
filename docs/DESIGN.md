@@ -136,7 +136,7 @@ components:
 
 ## Overview
 
-This document is the design foundation for the new CyberShu website. It defines the website's visual language, page requirements and component behavior for future design and implementation work. It is not a specification for reproducing a printed business card or preserving the current TeXt appearance.
+This document is the design foundation for the new CyberShu website. It defines the website's visual language, page requirements and component behavior for the production implementation and subsequent design work. It is not a specification for reproducing a printed business card or preserving the current TeXt appearance.
 
 The design starts with the website's content and tasks: discovering articles, reading technical material, finding conference resources, understanding the consultation offer and making contact. The existing site supplies the content and functional baseline. The business-card project supplies inspiration and updated brand assets, particularly the palette, Inter typography and CyberShu logo/wordmark. It does not supply a website layout, page hierarchy, audience restriction or mandatory copy.[^pages][^v9][^base]
 
@@ -144,7 +144,7 @@ The file follows the Google DESIGN.md `alpha` format. YAML tokens are the curren
 
 All project documentation, agent instructions, review reports and style-guide explanations must be written in English. Original article titles and quoted source material retain their language. This rule does not authorize translating published content.
 
-The companion [style guide](style-guide.html) provides a generated kitchen sink for the website. Its token samples and generic controls use this document's YAML directly. Its coverage table distinguishes demonstrated components from site-specific patterns still requiring specimens. The [design review](DESIGN-REVIEW.md) records the existing-site requirements and outstanding coverage gaps.
+The companion [style guide](style-guide.html) provides a generated kitchen sink for the website. Its token samples and generic controls use this document's YAML directly. Its production specimen shares the website CSS and navigation/search scripts. Its coverage table distinguishes interactive examples from static provider and consent states. The [design review](DESIGN-REVIEW.md) records the original requirements audit; [website review](WEBSITE-REVIEW.md) records implementation verification.
 
 ### Design inputs and their authority
 
@@ -166,7 +166,7 @@ Use the current tokens consistently until revising the shared design. A revision
 
 ### Website scope and visual direction
 
-CyberShu contains a technical blog, engineering essays, conference and webinar resources, a personal profile, a developer setup page and a consultation offer. The offer covers developer mentoring, career entry, interview preparation and cognitive coaching alongside architecture and automation. Support these existing audiences through a coherent website identity.[^pages][^consultations]
+CyberShu contains a technical blog, engineering essays, conference and webinar resources, a personal profile, a developer setup page, a contact page and a consultation offer. The offer covers developer mentoring, career entry, interview preparation and cognitive coaching alongside architecture and automation. Support these existing audiences through a coherent website identity.[^pages][^consultations]
 
 Use readable editorial typography, a clear distinction between primary content and supporting information, and restrained orange accents on navy and cream surfaces. The updated logo identifies the site across its page families. Give long-form reading and content discovery enough space; use stronger promotional treatments where the page's purpose calls for them.
 
@@ -209,7 +209,7 @@ The website palette uses the branding values rather than the colors of the print
 
 ## Typography
 
-Inter is the interface and prose family. Local Regular, SemiBold and Bold files, with their license, are included in `docs/design-reference/fonts/` for the style guide. They are not yet wired into production styles. The fallback stack is `Inter, system-ui, -apple-system, "Segoe UI", sans-serif`.[^base]
+Inter is the interface and prose family. Local Regular, SemiBold and Bold files, with their license, are included in `docs/design-reference/fonts/` for the style guide. Production serves licensed copies from `assets/fonts/`, using the same three weights. The fallback stack is `Inter, system-ui, -apple-system, "Segoe UI", sans-serif`.[^base]
 
 Tokens describe the initial wide-screen scale. The current preview switches below 768px: the main display uses `display-mobile` and section headings use 1.5rem. Body copy retains 1.125rem with 1.65 line height. The initial metadata size is 0.875rem. Adjust the scale and breakpoints against real titles, dense content and mobile reading; use relative units and support text enlargement without clipping.
 
@@ -244,12 +244,13 @@ This inventory is the content and behavior baseline for the new design, not a re
 | Technical article | `_posts/`, `article` layout | Long-form reading, heading anchors, table of contents, highlighted code, screenshots and links. Preserve per-post routes, metadata and previous/next navigation. |
 | Talk or webinar resource | Same article layout; Polish conference notes and webinar posts | Keep presentation downloads, reference lists and feedback forms visible. Allow video or PDF content without applying the portrait hero layout. |
 | Consultations | `/consultations.html` | Preserve expertise and offering groups, six detailed learning paths, pricing explanation and booking CTA target `#book-consultation`. Support substantial lists instead of reducing the page to short cards. |
+| Contact | `/contact.html` | Email is the primary contact action, followed by LinkedIn, X and GitHub profile links with visible names and decorative icons. Use the configured author email and profile handles. Keep the complete address selectable and readable on narrow screens. |
 | Profile | `/about.html` | Readable biography, experience and technology lists, social links and the author's disclaimer. Portrait is optional. |
 | Developer setup | `/uses.html` | Preserve category headings and labeled hardware/software lists with inline links. No mandatory cards or marketing CTA. |
 | Not found | `/404.html` | Keep an explicit 404 heading, a short explanation and accessible navigation back to existing content. |
 | Auxiliary output | `/feed.xml`, `/sitemap.xml`, generated `/commandbook.html` | Preserve feeds, discovery metadata and existing URLs. `commandbook.md` currently emits a utility page; removal or publication changes require a separate decision. |
 
-Keep Archive, Uses, Consultations, About, home and search discoverable. Their placement and visual grouping can change in the new website design. Route spelling, pagination paths, post-level `permalink` overrides and assets under `assets/docs/` are content contracts. Do not change them as a side effect of styling.
+Keep Archive, Uses, Consultations, About, Contact, home and search discoverable. Contact must be available from both the shared header and footer. Their placement and visual grouping can change in the new website design. Route spelling, pagination paths, post-level `permalink` overrides and assets under `assets/docs/` are content contracts. Do not change them as a side effect of styling.
 
 ### Reading, navigation and media
 
@@ -281,9 +282,9 @@ The site header and logo establish shared identity. Page introductions then expl
 
 ### Buttons, links and state
 
-A primary button has orange fill, navy text and a navy border on cream; its border is orange on navy. Hover and active use navy fill and cream text, retaining a visible border. Secondary buttons use cream fill, navy text and a navy border; hover underlines the label.
+A primary button has orange fill, navy text and a navy border on cream; its border is orange on navy. Hover and active use navy fill and cream text, retaining a visible border. Secondary buttons use cream fill, navy text and a navy border. Generic preview buttons underline on hover; production controls use navy fill and cream text. Booking actions on navy reverse to cream on hover. These treatments retain readable contrast.
 
-Standalone controls use a project target of at least 44px height; the initial horizontal padding is 24px. This is a minimum, not a fixed height that clips wrapped labels. `focus-visible` has a 2px outline offset by 3px: navy on cream, cream on navy. Text links stay underlined without hover.
+Standalone controls use a project target of at least 44px height; the production horizontal padding is 16px (24px for prominent booking actions). This is a minimum, not a fixed height that clips wrapped labels. `focus-visible` has a 2px outline offset by 4px: navy on cream, cream on navy. Text links stay underlined without hover.
 
 Disabled controls expose an unavailable state and reject activation. Busy controls retain their dimensions and expose a textual status. Selection and error must not be indicated only through color.
 
@@ -293,7 +294,7 @@ Each list item has a primary title link and a distinct metadata row. Preserve re
 
 Pagination has previous/next affordances, page links and a current-page state. At boundaries, unavailable directions must not remain actionable. Preserve the actual generated URLs.
 
-Archive tags are buttons with counts and selected states. Use `aria-pressed` for the selected filter and a visible selection cue; keep Show All. Preserve the existing `?tag=` contract. Decorative article labels are a different role and must not be used as a substitute for filtering.[^archive]
+Archive tags are buttons with counts and selected states. Use `aria-pressed` for the selected filter and a visible selection cue; keep Show All. Preserve the existing `?tag=` contract. Production places the full tag list in a native “Filter by topic” disclosure, with the selected topic visible in its summary, to keep article access close to the top on phones. Decorative article labels are a different role and must not be used as a substitute for filtering.[^archive]
 
 ### Search
 
@@ -303,7 +304,7 @@ The existing header opens a default-search overlay, not a dedicated search route
 
 Support the existing heading hierarchy and fragment links, paragraphs, nested lists, inline emphasis and code, blockquotes, images and language-marked code fences. Tables are a supported robustness specimen, even though the reviewed posts do not currently contain Markdown pipe tables. Mermaid is enabled in configuration; do not claim it is used by current posts without checking the content.[^posts][^runtime]
 
-Quotes may use navy text with a decorative orange rule. Code blocks use navy and cream as a baseline; assess every syntax color separately. Screenshots and diagrams must not inherit decorative image crops.
+Quotes may use navy text with a decorative orange rule. Code blocks use navy and cream as a baseline. Production syntax roles use `#FFAD8B` for keywords, `#B8D9BB` for strings, `#A8CDED` for functions/types and `#E5C990` for numbers; each must pass 4.5:1 against navy. These code-only colors are semantic exceptions to the brand palette. Screenshots and diagrams must not inherit decorative image crops.
 
 Keep article date/tags, table of contents, edit-on-GitHub links, RSS subscription and previous/next links where configured. Disqus comments and AddToAny sharing are configured integrations, not automatically new native components. Style their surrounding areas and account for blocked/unavailable providers. Author profiles and license blocks are conditional theme features, not mandatory new sections.[^article]
 
@@ -323,9 +324,17 @@ The demo dialog has a cream surface, `secondary` border and a navy backdrop at 7
 
 ### Contact and site footer
 
-A website contact region may use navy with cream text and a restrained orange accent. The branding assets provide `kontakt@cybershu.eu` and `cybershu.eu`; the consultation page supplies the existing booking integration. Use a contact or booking action appropriate to the page. The printed QR destination does not establish a website navigation requirement.[^base][^consultations]
+The dedicated Contact page at `/contact.html` makes email the primary action. Render the complete `site.author.email` as a visible, selectable `mailto:` link. Its value, `kontakt@cybershu.eu`, comes from the branding reference. The address must wrap without clipping at 320px and with 200% text enlargement. Use a navy email action with cream text and a cream inset keyboard-focus outline. Secondary profile links retain underlines and the shared light-surface focus treatment.[^base][^contact]
 
-Preserve the site's social links, copyright and feed access where present. A full-size contact hero is optional; it must not replace existing footer navigation or become compulsory after every article.
+LinkedIn, X and GitHub are secondary contact destinations, in that order, sourced from the existing author configuration. Each link combines its visible platform name with a decorative icon marked `aria-hidden="true"`; SVGs must not take keyboard focus. Visible names provide the accessible labels. The Contact page does not include Facebook. Keep contact access usable without JavaScript or an external form provider.[^contact]
+
+The shared header and footer link to Contact. Preserve the footer's social links, copyright and feed access. The consultation page retains its separate booking integration and destination. A full-size contact hero is optional; it must not replace existing footer navigation or become compulsory after every article.[^consultations]
+
+### Cookie preferences and external services
+
+The first-visit preference panel is a compact, non-blocking native dialog, limited to 400px on wide screens and inset 16px on mobile. It presents equal-size accept/reject controls and an expandable explanation. It does not trap focus on first appearance. Reopening through the footer uses a modal dialog with Escape dismissal and focus return. Google Analytics and AddToAny stay inactive until acceptance. Tally and involve.me forms and Disqus comments initialize immediately on page load, independently of cookie preferences. Tally frames use eager loading, including forms below the fold.
+
+Store a versioned choice in local storage with a 180-day expiry. When storage is unavailable, honor the current document's choice. Rejection keeps articles, local search, filters, RSS and downloads available. Revocation reloads the document if optional analytics or sharing code has started; forms and comments initialize again on the new document. Automatic form/comment loading alone does not cause a reload on rejection. This cannot erase storage belonging to another origin. Disqus is included on every blog post, retaining existing thread identifiers and falling back to the post URL when no key is defined. Direct provider links remain visible for blocked scripts, offline failures and no-JavaScript access. Do not style cross-origin form internals or imply that an illustrative specimen verifies a live submission.
 
 ### Motion
 
@@ -351,6 +360,7 @@ The initial color and border transitions last 150ms with `ease-out`; this timing
 | Technical article | Heading anchors/TOC, deep lists, inline code, long code lines, screenshots, footer metadata and previous/next |
 | Conference resources | Polish copy, PDF/download fallback, resource lists and Tally wrapper with the provider unavailable |
 | Consultations | Full learning-path copy, booking fragment, involve.me wrapper, pricing and mobile content flow |
+| Contact | Email priority, exact `mailto:` destination, configured LinkedIn/X/GitHub links, decorative icons, visible names, keyboard focus, narrow layout and no-JavaScript access |
 | Profile, setup and 404 | Biography and equipment lists, social links, error explanation and site navigation |
 | Shared behavior | 320/768/1024/1440px widths, 200% text, visible focus, contrast, reduced motion and page language |
 
@@ -358,7 +368,7 @@ Use the CORS or n8n tutorial for technical content, the 2026 Confitura notes for
 
 ### Repository map and build scope
 
-The root site uses Jekyll with TeXt. `assets/css/main.scss` imports `_sass/` partials and ends with `_sass/custom.scss`. Templates live in `_layouts/` and `_includes/`; navigation in `_data/navigation.yml`; production configuration in the root `_config.yml`. `consultations.md` includes its own stylesheet with gradients and non-brand accents that must be considered during a future visual refactor. Do not edit generated `_site/` output.[^runtime]
+The root site uses Jekyll with TeXt. `assets/css/main.scss` imports `_sass/custom.scss`, which composes `_sass/cybershu/{foundation,shell,content,controls}.scss`. The legacy TeXt styles remain in the repository but are no longer loaded by the root site. Templates live in `_layouts/` and `_includes/`; navigation in `_data/navigation.yml`; production configuration in the root `_config.yml`. `consultations.md` uses the shared production styles; its old embedded stylesheet and inline color overrides have been removed. Do not edit generated `_site/` output.[^runtime]
 
 `docs/` also contains inherited TeXt documentation and demo sites, including upstream translations. They are historical technical reference, not CyberShu brand rules. The root configuration excludes `/docs` and `/tools`. The alternative `docs/_config.yml` and `.travis.yml` refer to the TeXt demo workflow; a successful demo build is not verification of the root CyberShu site.[^runtime]
 
@@ -372,7 +382,7 @@ Generate with `ruby tools/style-guide.rb`, watch with `ruby tools/style-guide.rb
 
 After saving source changes, watch mode rewrites the HTML; refresh the browser. Commit the generated HTML with its sources. The source fingerprint includes the whole design document and preview sources. It detects drift, but does not translate natural-language rules into CSS.
 
-Update relevant specimens and their coverage status when a page pattern changes. GitHub Actions and the package `build` command check freshness but do not update files, make commits or prove that production styles match. Direct `bundle exec jekyll build` bypasses this package-script check. Before finishing a visual change, run the freshness check explicitly and verify the root site. A future refactor should share component styles with the guide where practical.
+Update relevant specimens and their coverage status when a page pattern changes. GitHub Actions and the package `build` command check freshness but do not update files, make commits or prove that production styles match. Direct `bundle exec jekyll build` bypasses this package-script check. Before finishing a visual change, run the freshness check explicitly and verify the root site. The production specimen embeds the four plain-CSS production Sass partials and the navigation/search scripts. Their contents participate in the guide fingerprint. Keep these partials valid CSS so the standalone specimen requires no Sass build.
 
 ### Sources
 
@@ -381,6 +391,7 @@ Update relevant specimens and their coverage status when a page pattern changes.
 [^base]: Same branding project: `src/generate_business_card.py`, the three Inter TTF files under `assets/fonts/`, and the v8 reverse reused by v9. These supply the palette, font weights and QR destination.
 [^pages]: Repository sources: `index.html`, `archive.html`, `about.md`, `uses.md`, `consultations.md`, `404.html`, `commandbook.md`, `_data/navigation.yml`, `_layouts/home.html`, `_layouts/articles.html`, `_layouts/archive.html`. Routes checked in a fresh root-config Jekyll build on 2026-09-26.
 [^posts]: The 19 dated Markdown files under `_posts/`, excluding `_template.md`. Examples: `2023-02-27-spring-boot-cors.md`, `2023-12-26-n8n-setup.md`, `2026-09-07-think-before-you-build-side-project-economics.md` and `2026-09-23-confitura-resilience-w-erze-ai.md`. Counts are a dated inventory, not hard-coded UI data.
+[^contact]: `contact.html`, `_sass/cybershu/content.scss` and `_config.yml` author fields; email sourced from the local branding project’s business-card assets.
 [^consultations]: `consultations.md`, including the developer offerings, Cognitive Coaching section, six learning paths and `#book-consultation` involve.me embed.
 [^media]: `_posts/2021-09-24-webinar-second-brain.md`, `_posts/2025-06-15-vibe-coding.md`, `_posts/2026-05-14-javeloper-cebula.md`, `_posts/2026-09-23-confitura-resilience-w-erze-ai.md` and `assets/docs/`.
 [^archive]: `_includes/tags.html`, `_includes/paginator.html`, `_includes/scripts/archieve.js` and `_layouts/archive.html`.

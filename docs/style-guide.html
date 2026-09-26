@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
-  <meta name="design-source-sha256" content="b56ea363ae0863c3b5188630fccb3eb2071cf45881eefd00f011c231569f0279">
+  <meta name="design-source-sha256" content="1ebbdf764a1dfca31986678f50277c36fbc330832c72e421112bb741772a1fa9">
   <title>CyberShu · style guide</title>
   <link rel="icon" href="data:,">
   <style>
@@ -217,21 +217,22 @@ dialog::backdrop { background: var(--colors-primary); opacity: 0.75; }
       <div class="intro-bottom"><p>Website identity, reading patterns and interface components for the new CyberShu design.</p><span class="version">DESIGN.md / alpha</span></div>
     </div>
     <nav class="section-nav" aria-label="Style guide sections">
-      <a href="#identity">01 / Identity</a><a href="#colors">02 / Colors</a><a href="#typography">03 / Typography</a><a href="#geometry">04 / Geometry</a><a href="#actions">05 / Actions</a><a href="#forms">06 / Forms</a><a href="#content">07 / Content</a><a href="#states">08 / States</a>
+      <a href="#identity">01 / Identity</a><a href="#colors">02 / Colors</a><a href="#typography">03 / Typography</a><a href="#geometry">04 / Geometry</a><a href="#actions">05 / Actions</a><a href="#forms">06 / Forms</a><a href="#content">07 / Content</a><a href="#states">08 / States</a><a href="#production">09 / Website specimens</a>
     </nav>
 
     <details class="coverage"><summary>Coverage against the current website</summary>
-      <p>This preview demonstrates the current design baseline. Geometry and component treatments can evolve together; the branding reference does not fix page layouts. It does not yet cover every production page or interaction. The website currently includes a paginated technical blog, tag-filtered archive, consultation offer and English and Polish articles.</p>
+      <p>This preview demonstrates the current design baseline. Geometry and component treatments can evolve together; the branding reference does not fix page layouts. The production specimens below share the website stylesheet. Static examples do not prove live provider behavior. The website currently includes a paginated technical blog, tag-filtered archive, consultation offer, dedicated contact page and English and Polish articles.</p>
       <div class="table-scroll" role="region" aria-label="Specimen coverage" tabindex="0"><table>
         <caption>Specimens and remaining gaps</caption><thead><tr><th scope="col">Pattern</th><th scope="col">Coverage</th></tr></thead><tbody>
           <tr><th scope="row">Brand, tokens and generic controls</th><td>Demonstrated below</td></tr>
-          <tr><th scope="row">Article body</th><td>Basic prose, lists, code and table; TOC, highlighted code and footer still need specimens</td></tr>
-          <tr><th scope="row">Blog index and pagination</th><td>Requirements documented; dedicated specimens missing</td></tr>
-          <tr><th scope="row">Archive filtering and search</th><td>Requirements documented; selected tags, query results and overlay behavior missing</td></tr>
-          <tr><th scope="row">Consultations and booking</th><td>The local demo form is not the involve.me booking flow; full learning-path and provider specimens missing</td></tr>
-          <tr><th scope="row">Conference resources</th><td>Download, PDF and Tally feedback-wrapper specimens missing</td></tr>
-          <tr><th scope="row">About, Uses and 404</th><td>Page requirements documented; dedicated layouts missing</td></tr>
-        </tbody></table></div>
+          <tr><th scope="row">Article body</th><td>Prose, highlighted code, TOC, downloads and article footer in the production specimen</td></tr>
+          <tr><th scope="row">Blog index and pagination</th><td>Article row and current/disabled pagination states in the production specimen</td></tr>
+          <tr><th scope="row">Archive filtering and search</th><td>Interactive search (results, empty, clear, Escape); static selected archive filter and empty state</td></tr>
+          <tr><th scope="row">Consultations and booking</th><td>Representative learning path, pricing, booking CTA and static provider fallback; actual form tested separately</td></tr>
+          <tr><th scope="row">Conference resources</th><td>Download and Polish Tally wrapper states in the production specimen; PDF viewing checked on the actual page</td></tr>
+          <tr><th scope="row">Contact</th><td>Primary email action and secondary LinkedIn, X and GitHub links with decorative icons in the production specimen; shared CSS supports responsive inspection</td></tr>
+          <tr><th scope="row">About, Uses and 404</th><td>Reading-layout excerpts and 404 recovery actions in the production specimen</td></tr>
+        <tr><th scope="row">Footer and cookies</th><td>Shared footer, compact equal-choice panel, expanded disclosure; consent persistence tested on the website</td></tr></tbody></table></div>
       <p>See the <a href="DESIGN-REVIEW.md">design documentation review</a> and the page-family requirements in <a href="DESIGN.md">DESIGN.md</a>. Brand references supply the palette and updated logo; page composition is designed for the website.</p>
     </details>
 
@@ -369,9 +370,460 @@ console.log(result);</code></pre></article><aside class="panel bordered"><p clas
       <dialog id="demo-dialog" aria-labelledby="dialog-title"><h2 id="dialog-title" data-type="subheading">Example dialog</h2><p>Focus stays within the dialog. Escape closes it and restores focus to the trigger.</p><form method="dialog"><button data-component="button-primary" autofocus>Close</button></form></dialog>
     </section>
 
-    <section id="contact" class="contact panel dark" aria-labelledby="contact-title"><p class="eyebrow">Contact</p><h2 id="contact-title" data-type="heading">Start a conversation.</h2><a class="contact-address" href="mailto:kontakt@cybershu.eu">kontakt@cybershu.eu</a><a href="https://cybershu.eu">cybershu.eu ↗</a></section>
+    <section id="contact" class="contact panel dark" aria-labelledby="contact-title"><p class="eyebrow">Generic contact surface</p><h2 id="contact-title" data-type="heading">Start a conversation.</h2><a class="contact-address" href="mailto:kontakt@cybershu.eu">kontakt@cybershu.eu</a><a href="https://cybershu.eu">cybershu.eu ↗</a></section>
+    <section id="production" aria-labelledby="production-title">
+      <div class="section-heading"><p class="index">09 / Website specimens</p><h2 id="production-title" data-type="heading">Production components</h2></div>
+      <p>The scrollable preview shares the production CSS, local fonts and navigation/search scripts. Resize the browser to inspect mobile flow, including the Contact email and social links. Archive filters, provider states and consent are labeled static specimens; use the website regression suite for state persistence, history and provider loading.</p>
+      <iframe title="CyberShu production component specimens" style="width:100%;height:900px;border:1px solid var(--colors-secondary)" srcdoc="&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;&lt;title&gt;Production component specimens&lt;/title&gt;&lt;style&gt;@font-face { font-family: Inter; src: url(&#39;../assets/fonts/Inter-Regular.ttf&#39;) format(&#39;truetype&#39;); font-weight: 400; font-display: swap; }
+@font-face { font-family: Inter; src: url(&#39;../assets/fonts/Inter-SemiBold.ttf&#39;) format(&#39;truetype&#39;); font-weight: 600; font-display: swap; }
+@font-face { font-family: Inter; src: url(&#39;../assets/fonts/Inter-Bold.ttf&#39;) format(&#39;truetype&#39;); font-weight: 700; font-display: swap; }
+:root {
+  --navy: #0A1628; --cream: #F7F4ED; --orange: #FF6B35; --muted: #52677C;
+  --on-dark: #B0BEC5; --role: #C6D0D7; --line: #A6A9AA; --radius: 4px;
+  --xs: 4px; --sm: 8px; --md: 16px; --lg: 24px; --xl: 32px; --xxl: 48px; --section: 64px; --wide: 96px;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+body { margin: 0; background: var(--cream); color: var(--navy); font: 400 1.125rem/1.65 Inter, system-ui, -apple-system, &#39;Segoe UI&#39;, sans-serif; overflow-wrap: anywhere; }
+[hidden] { display: none !important; }
+a { color: inherit; text-underline-offset: .22em; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button, .button { display: inline-flex; align-items: center; justify-content: center; gap: var(--sm); min-height: 44px; padding: 8px 16px; border: 1px solid var(--navy); border-radius: var(--radius); background: transparent; color: var(--navy); font-size: 1rem; font-weight: 600; line-height: 1.5; cursor: pointer; text-decoration: none; }
+button:hover, .button:hover { background: var(--navy); color: var(--cream); }
+button, a, input { transition: color 150ms ease-out, background-color 150ms ease-out, border-color 150ms ease-out; }
+:focus-visible { outline: 2px solid var(--navy); outline-offset: 4px; }
+h1, h2, h3, h4, h5, h6 { margin: 0 0 var(--md); font-weight: 600; line-height: 1.25; }
+h1 { font-size: 3rem; line-height: 1.15; letter-spacing: -.02em; }
+h2 { font-size: 2rem; letter-spacing: -.02em; }
+h3 { font-size: 1.375rem; line-height: 1.35; }
+h4, h5, h6 { font-size: 1.125rem; }
+p { margin: 0 0 var(--lg); }
+img, svg, video { max-width: 100%; height: auto; }
+img.emoji { display: inline; width: 1em; height: 1em; vertical-align: middle; }
+iframe, embed { display: block; max-width: 100%; border: 0; }
+hr { border: 0; border-top: 1px solid var(--line); margin: var(--xxl) 0; }
+summary { cursor: pointer; min-height: 44px; padding-block: 8px; font-weight: 600; }
+.site-container { width: calc(100% - 48px); max-width: 1200px; margin-inline: auto; }
+.eyebrow, .article-meta, .post-date, .tag-links, .edit-link { font-size: .875rem; line-height: 1.5; color: var(--muted); }
+.eyebrow { margin-bottom: var(--lg); }
+.accent-dot { color: var(--navy); }
+.accent-dot::after { content: &#39;&#39;; display: block; width: 48px; height: 3px; margin-top: var(--lg); background: var(--orange); }
+.button-primary { background: var(--orange); }
+.button-row { display: flex; flex-wrap: wrap; gap: var(--md); }
+.muted-dark { color: var(--on-dark); }
+@media (max-width: 767px) {
+  .site-container { width: calc(100% - 32px); }
+  h1 { font-size: 2rem; line-height: 1.2; }
+  h2 { font-size: 1.5rem; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
+@media print { .site-header, .site-footer, dialog, .article-toc, .provider-panel, .comments, .article__sharing, .skip-link { display: none !important; } body { background: white; color: black; font-size: 11pt; } .site-container { width: 100%; } }
+
+.skip-link { position: absolute; z-index: 20; top: 8px; left: 16px; padding: 12px 16px; background: var(--cream); transform: translateY(-150%); }
+.skip-link:focus { transform: none; }
+.site-header, .site-footer { background: var(--navy); color: var(--cream); }
+.site-header { border-bottom: 2px solid var(--orange); }
+.site-header :focus-visible, .site-footer :focus-visible { outline-color: var(--cream); }
+.header-inner { min-height: 100px; display: flex; align-items: center; justify-content: space-between; gap: var(--xl); }
+.brand { display: inline-block; flex-shrink: 0; font-size: 1.75rem; line-height: 1.2; font-weight: 700; letter-spacing: -.02em; text-decoration: none; }
+.brand span { color: var(--orange); }
+.header-actions { order: 3; display: flex; gap: var(--sm); }
+.header-actions button { color: var(--cream); border-color: var(--muted); }
+.header-actions button:hover { background: var(--cream); color: var(--navy); }
+.menu-toggle { display: none; }
+.site-navigation { display: flex; gap: var(--lg); align-items: center; margin-left: auto; }
+.site-navigation a { display: flex; align-items: center; min-height: 44px; font-size: 1rem; text-decoration: none; }
+.site-navigation a:hover, .site-navigation [aria-current] { text-decoration: underline; text-decoration-color: var(--orange); text-decoration-thickness: 2px; text-underline-offset: 8px; }
+.page-main { padding-block: var(--section) var(--wide); min-height: 65vh; }
+.page-main:focus { outline: none; }
+.page-heading { max-width: 960px; padding-bottom: var(--xl); margin-bottom: var(--xxl); border-bottom: 1px solid var(--line); }
+.page-heading h1 { margin-bottom: var(--lg); }
+.page-reading:not(:has(.reading-grid)) { max-width: 850px; }
+.reading-grid { display: grid; grid-template-columns: minmax(0, 1fr) 240px; gap: var(--section); align-items: start; }
+.page-body { min-width: 0; }
+.article-toc { grid-column: 2; grid-row: 1; position: sticky; top: 24px; max-height: calc(100vh - 48px); overflow: auto; font-size: .875rem; border-top: 2px solid var(--orange); }
+.article-toc + .page-body { grid-column: 1; grid-row: 1; }
+.article-toc summary { font-size: 1rem; }
+.article-toc ol { list-style: none; margin: 8px 0 0; padding: 0; }
+.article-toc li { margin-bottom: 4px; }
+.article-toc a { display: block; padding-block: 6px; text-decoration: none; color: var(--muted); line-height: 1.5; }
+.article-toc a:hover { color: var(--navy); text-decoration: underline; }
+.article-toc .toc-sub { padding-left: 16px; }
+.site-footer { border-top: 2px solid var(--orange); padding-block: var(--xxl) var(--xl); }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: var(--xl); padding-bottom: var(--xxl); }
+.footer-grid .brand { margin-bottom: var(--lg); }
+.footer-grid p { font-size: 1rem; }
+.footer-grid h2 { font-size: .875rem; font-weight: 400; color: var(--on-dark); letter-spacing: 0; margin-bottom: 16px; }
+.footer-grid nav a { display: block; width: fit-content; font-size: 1rem; padding-block: 6px; }
+.footer-bottom { display: flex; flex-wrap: wrap; gap: var(--lg); align-items: center; justify-content: space-between; border-top: 1px solid var(--muted); padding-top: var(--lg); font-size: .875rem; color: var(--on-dark); }
+.footer-bottom p { margin: 0; }
+.text-button { color: inherit; border: 0; padding-inline: 0; font-size: inherit; text-decoration: underline; font-weight: 400; }
+@media (max-width: 1023px) {
+  .header-inner { flex-wrap: wrap; gap: 16px; padding-block: 20px; min-height: 88px; }
+  .header-actions { margin-left: auto; order: 0; }
+  .menu-toggle { display: inline-flex; }
+  .site-navigation { width: 100%; margin-left: 0; flex-wrap: wrap; }
+  .site-navigation[data-collapsed=&#39;true&#39;] { display: none; }
+  .reading-grid { display: flex; flex-direction: column; gap: var(--xl); }
+  .article-toc { position: static; max-height: none; width: 100%; }
+  .article-toc + .page-body { width: 100%; }
+  .page-reading { max-width: 850px; }
+}
+@media (max-width: 767px) {
+  .page-main { padding-block: var(--xxl); }
+  .header-inner { gap: 12px; }
+  .header-actions { gap: 8px; }
+  .header-actions button { padding-inline: 10px; font-size: .875rem; }
+  .header-actions .search-trigger span { display: none; }
+  .brand { font-size: 1.5rem; }
+  .site-navigation { gap: 8px 24px; border-top: 1px solid var(--muted); padding-top: 12px; }
+  .site-navigation a { flex: 1 0 35%; }
+  .page-heading { margin-bottom: var(--xl); }
+  .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 16px; }
+  .footer-grid &gt; div:first-child { grid-column: 1 / -1; }
+  .footer-bottom { display: block; }
+  .footer-bottom p { margin-block: 12px; }
+}
+
+.index-intro { display: grid; grid-template-columns: 1.6fr 1fr; gap: var(--section); padding-bottom: var(--section); align-items: end; }
+.index-intro h1 { margin: 0; }
+.index-intro-side p { max-width: 38ch; color: var(--muted); margin-bottom: var(--md); }
+.index-intro-side a { font-size: 1rem; }
+.section-line { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: var(--md); border-top: 1px solid var(--navy); padding-top: var(--lg); margin-bottom: var(--md); }
+.section-line h2 { font-size: 1rem; letter-spacing: 0; }
+.section-line &gt; a { font-size: .875rem; }
+.post-row { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: var(--xl); padding-block: var(--xl); border-bottom: 1px solid var(--line); }
+.post-row h2 { max-width: 34ch; margin-bottom: var(--md); }
+.post-row h2 a { text-decoration: none; }
+.post-row h2 a:hover { text-decoration: underline; }
+.post-date { padding-top: 6px; }
+.post-date span { display: block; margin-top: var(--sm); }
+.post-excerpt { max-width: 70ch; margin-bottom: var(--lg); color: var(--muted); }
+.post-row-bottom { display: flex; align-items: baseline; justify-content: space-between; gap: var(--lg); }
+.tag-links { display: flex; flex-wrap: wrap; gap: 8px 16px; }
+.tag-links a { display: inline-block; padding-block: 4px; }
+.read-more { flex-shrink: 0; font-size: .875rem; font-weight: 600; padding-block: 10px; }
+.pagination { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-top: var(--xxl); }
+.page-numbers { display: flex; gap: 8px; }
+.page-numbers a, .page-numbers span { display: grid; place-items: center; min-width: 44px; min-height: 44px; border-radius: var(--radius); }
+.page-numbers [aria-current] { background: var(--navy); color: var(--cream); font-weight: 600; }
+.disabled { color: var(--muted); border: 1px dashed var(--muted); cursor: default; }
+.disabled:hover { background: none; color: var(--muted); }
+.article-meta { display: flex; flex-wrap: wrap; gap: 8px 24px; margin-bottom: var(--md); }
+.edit-link { display: inline-block; margin-top: 16px; }
+.prose { max-width: 70ch; }
+.prose h2 { margin-top: var(--xxl); }
+.prose h3 { margin-top: var(--xl); }
+.prose h4 { margin-top: var(--lg); }
+.prose ul, .prose ol { padding-left: 24px; margin-bottom: var(--lg); }
+.prose li { margin-bottom: var(--sm); }
+.prose ul ul, .prose ol ol { margin-top: var(--sm); margin-bottom: var(--sm); }
+.prose blockquote { margin: var(--xl) 0; padding: 0 0 0 var(--lg); border-left: 2px solid var(--orange); }
+.prose .warning { padding: var(--lg); border: 1px solid var(--navy); border-left: 4px solid var(--orange); }
+.prose img:not(.emoji) { display: block; margin-block: var(--lg); }
+.prose a { overflow-wrap: anywhere; }
+code, pre { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 1rem; }
+code { background: rgba(10,22,40,.06); padding: 2px 4px; }
+pre { max-width: 100%; overflow-x: auto; background: var(--navy); color: var(--cream); padding: var(--lg); line-height: 1.6; margin: var(--lg) 0; tab-size: 2; overflow-wrap: normal; }
+pre code { padding: 0; background: none; white-space: pre; overflow-wrap: normal; }
+.highlight { max-width: 100%; }
+.highlight .c, .highlight .c1, .highlight .cm, .highlight .cp { color: var(--on-dark); }
+.highlight .k, .highlight .kd, .highlight .kn, .highlight .kt, .highlight .o, .highlight .ow { color: #FFAD8B; }
+.highlight .s, .highlight .s1, .highlight .s2, .highlight .sb, .highlight .si, .highlight .na { color: #B8D9BB; }
+.highlight .nf, .highlight .nc, .highlight .nb, .highlight .nt { color: #A8CDED; }
+.highlight .m, .highlight .mi, .highlight .mf, .highlight .no { color: #E5C990; }
+.highlight .err { color: var(--cream); text-decoration: underline wavy; }
+.table-scroll { overflow-x: auto; margin: var(--lg) 0; }
+table { width: 100%; border-collapse: collapse; font-size: 1rem; }
+th, td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--line); }
+th { background: var(--navy); color: var(--cream); }
+.heading-anchor { margin-left: 8px; font-size: .7em; color: var(--muted); text-decoration: none; }
+.article__footer, .article__sharing, .comments { margin-top: var(--xxl); padding-top: var(--lg); border-top: 1px solid var(--line); font-size: 1rem; }
+.article__section-navigator { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; border-top: 1px solid var(--line); margin-top: var(--xl); padding-top: var(--xl); font-size: 1rem; }
+.article__section-navigator span { display: block; color: var(--muted); font-size: .875rem; margin-bottom: 8px; }
+.article__section-navigator .next { grid-column: 2; }
+.article__license:empty { display: none; }
+.archive-intro { color: var(--muted); }
+.topic-picker { border-block: 1px solid var(--line); padding-block: 8px; }
+.topic-picker summary { display: list-item; }
+.topic-picker summary span { font-size: .875rem; font-weight: 400; color: var(--muted); margin-left: 16px; }
+.topic-picker .archive-filters { margin-block: 16px; }
+.archive-filters { display: flex; flex-wrap: wrap; gap: 8px; }
+.archive-filters button { font-size: .875rem; font-weight: 400; }
+.archive-filters button span { font-size: .75rem; }
+.archive-filters [aria-pressed=&#39;true&#39;] { background: var(--navy); color: var(--cream); text-decoration: underline; text-underline-offset: 4px; }
+.archive-status { margin-block: var(--xl); color: var(--muted); font-size: .875rem; }
+.archive-year { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 32px; border-top: 1px solid var(--line); padding-block: var(--lg); }
+.archive-entry { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: var(--lg); padding-block: 16px; }
+.archive-entry time { color: var(--muted); font-size: .875rem; padding-top: 4px; }
+.archive-entry h3 { margin: 0; }
+.archive-entry a { text-decoration: none; }
+.archive-entry a:hover { text-decoration: underline; }
+.consultation-container .intro-text { max-width: 70ch; margin-bottom: var(--section); }
+.consultation-container .section-title { margin-block: var(--section) var(--xl); }
+.expertise-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--lg) var(--xxl); }
+.expertise-card { border-top: 1px solid var(--line); padding-top: var(--lg); }
+.expertise-title { display: block; font-weight: 600; margin-bottom: var(--sm); }
+.cta-container { background: var(--navy); color: var(--cream); padding: var(--xxl); margin-block: var(--section); }
+.cta-container :focus-visible { outline-color: var(--cream); }
+.cta-container p { max-width: 70ch; color: var(--role); }
+.cta-button { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 12px 24px; background: var(--orange); color: var(--navy); border: 1px solid var(--orange); border-radius: var(--radius); text-decoration: none; font-weight: 600; }
+.cta-button:hover { background: var(--cream); border-color: var(--cream); }
+.highlight-box { margin-top: var(--xl); border-top: 1px solid var(--muted); padding-top: var(--lg); max-width: 70ch; font-size: 1rem; color: var(--role); }
+.path-card { max-width: 80ch; border-top: 1px solid var(--line); margin-top: var(--xxl); padding-top: var(--xl); }
+.path-title { font-size: 1.5rem; max-width: 45ch; margin-bottom: var(--xl); }
+.path-section-header { font-weight: 600; margin-top: var(--lg); }
+.path-list { padding-left: var(--lg); margin-block: var(--sm) var(--lg); }
+.path-list li { margin-bottom: var(--sm); }
+.not-found { padding-block: var(--xxl); }
+.not-found h1 { font-size: 6rem; }
+.contact-page { max-width: 70ch; }
+.contact-email { display: flex; align-items: center; justify-content: space-between; gap: var(--lg); padding: var(--xl); background: var(--navy); color: var(--cream); border-bottom: 2px solid var(--orange); text-decoration: none; }
+.contact-email-content { min-width: 0; }
+.contact-label { display: block; margin-bottom: var(--sm); color: var(--on-dark); font-size: .875rem; }
+.contact-email .contact-address { font-size: 2rem; font-weight: 600; line-height: 1.35; letter-spacing: -.02em; text-decoration: underline; text-underline-offset: .2em; }
+.contact-email-icon { flex-shrink: 0; color: var(--orange); }
+.contact-email:focus-visible { outline-color: var(--cream); outline-offset: -6px; }
+.contact-email:hover .contact-address { text-decoration-thickness: 2px; }
+.contact-socials { display: flex; flex-wrap: wrap; gap: var(--md) var(--xl); margin-top: var(--xl); }
+.contact-socials a { display: inline-flex; align-items: center; gap: var(--sm); min-height: 44px; padding-block: var(--sm); font-size: 1rem; }
+.contact-socials svg { flex-shrink: 0; width: 1.25rem; height: 1.25rem; }
+@media (max-width: 767px) {
+  .contact-email { padding: var(--lg) var(--md); gap: var(--md); }
+  .contact-email .contact-address { font-size: 1.25rem; }
+  .index-intro { grid-template-columns: 1fr; gap: var(--xl); padding-bottom: var(--xxl); }
+  .post-row { grid-template-columns: 1fr; gap: var(--md); }
+  .post-date { display: flex; justify-content: space-between; }
+  .post-date span { margin: 0; }
+  .post-row-bottom { display: block; }
+  .read-more { display: inline-block; margin-top: 8px; }
+  .pagination { flex-wrap: wrap; gap: 16px 8px; }
+  .page-numbers { order: 3; width: 100%; justify-content: center; }
+  .archive-year { grid-template-columns: 1fr; gap: 0; }
+  .archive-entry { gap: 16px; }
+  .archive-entry h3 { font-size: 1.125rem; }
+  .expertise-grid { grid-template-columns: 1fr; }
+  .cta-container { padding: var(--lg); margin-block: var(--xxl); }
+  .article__section-navigator { grid-template-columns: 1fr; }
+  .article__section-navigator .next { grid-column: auto; }
+  pre { padding: var(--md); }
+}
+
+dialog { color: var(--navy); background: var(--cream); border: 1px solid var(--navy); padding: var(--xl); max-height: calc(100dvh - 32px); overflow-y: auto; }
+dialog::backdrop { background: rgba(10,22,40,.72); }
+.dialog-heading { display: flex; justify-content: space-between; align-items: baseline; gap: var(--md); margin-bottom: var(--lg); }
+.dialog-heading h2 { margin: 0; }
+.search-dialog { width: calc(100% - 32px); max-width: 760px; }
+.search-dialog label { display: block; font-weight: 600; font-size: 1rem; margin-bottom: 8px; }
+.search-field { display: flex; gap: var(--sm); }
+.search-field input { min-width: 0; width: 100%; min-height: 48px; padding: 12px; background: transparent; border: 1px solid var(--muted); border-radius: var(--radius); }
+.search-field input::placeholder { color: var(--muted); }
+[data-search-status] { font-size: .875rem; color: var(--muted); margin-top: var(--md); }
+.search-results { list-style: none; padding: 0; margin: 0; }
+.search-results li { border-top: 1px solid var(--line); }
+.search-results a { display: block; padding: 16px 0; font-weight: 600; }
+.cookie-dialog { position: fixed; z-index: 15; inset: auto 24px 24px auto; margin: 0; width: calc(100% - 48px); max-width: 400px; padding: 24px; box-shadow: 0 8px 32px rgba(10,22,40,.16); }
+.cookie-dialog h2 { font-size: 1.125rem; margin-bottom: 8px; }
+.cookie-dialog p, .cookie-dialog summary { font-size: .875rem; line-height: 1.5; }
+.cookie-dialog p { margin-bottom: 8px; }
+.cookie-dialog details { margin-block: 8px 16px; }
+.cookie-dialog summary { font-weight: 400; }
+.cookie-actions { display: flex; gap: 8px; }
+.cookie-actions button { flex: 1; padding: 8px; font-size: .875rem; }
+.provider-panel { border: 1px solid var(--muted); padding: var(--lg); font-size: 1rem; margin-block: var(--lg); }
+.provider-placeholder p { max-width: 65ch; }
+.provider-panel h2 { margin-top: 0; font-size: 1.375rem; }
+.provider-fallback { margin-block: 16px 0; font-size: .875rem; }
+.provider-status { color: var(--muted); font-size: .875rem; margin-block: 12px; }
+.provider-status:empty { display: none; }
+.provider-panel iframe { margin-top: 24px; width: 100%; background: var(--cream); }
+.no-script-note { font-size: .875rem; padding-block: 24px; }
+@media (max-width: 767px) {
+  dialog { padding: var(--lg); }
+  .dialog-heading { align-items: flex-start; }
+  .dialog-heading h2 { font-size: 1.375rem; }
+  .cookie-dialog { inset: auto 16px 16px; width: calc(100% - 32px); max-width: none; padding: 16px; }
+}
+
+.specimen-label { margin-top: 64px; border-top: 2px solid var(--orange); padding-top: 16px; color: var(--muted); font-size: .875rem; }
+.cookie-dialog.sample-cookie { position: static; margin: 24px 0; width: 100%; }
+&lt;/style&gt;&lt;/head&gt;&lt;body&gt;
+&lt;a class=&quot;skip-link&quot; href=&quot;#main&quot;&gt;Skip to content&lt;/a&gt;
+&lt;header class=&quot;site-header&quot;&gt;&lt;div class=&quot;site-container header-inner&quot;&gt;&lt;a class=&quot;brand&quot; href=&quot;#main&quot;&gt;Cyber&lt;span&gt;Shu&lt;/span&gt;&lt;/a&gt;&lt;div class=&quot;header-actions&quot;&gt;&lt;button data-search-open&gt;Search ↗&lt;/button&gt;&lt;button class=&quot;menu-toggle&quot; data-menu-toggle aria-expanded=&quot;false&quot; aria-controls=&quot;site-navigation&quot; hidden&gt;Menu +&lt;/button&gt;&lt;/div&gt;&lt;nav id=&quot;site-navigation&quot; class=&quot;site-navigation&quot; aria-label=&quot;Main navigation&quot;&gt;&lt;a href=&quot;#index&quot; aria-current=&quot;page&quot;&gt;Articles&lt;/a&gt;&lt;a href=&quot;#archive&quot;&gt;Archive&lt;/a&gt;&lt;a href=&quot;#profile&quot;&gt;Uses&lt;/a&gt;&lt;a href=&quot;#consultations&quot;&gt;Consultations&lt;/a&gt;&lt;a href=&quot;#profile&quot;&gt;About&lt;/a&gt;&lt;a href=&quot;#contact&quot;&gt;Contact&lt;/a&gt;&lt;/nav&gt;&lt;/div&gt;&lt;/header&gt;
+&lt;main id=&quot;main&quot; class=&quot;site-container page-main&quot;&gt;
+&lt;p&gt;This isolated specimen uses the production CSS and navigation/search scripts. Navigation links stay within the specimen; Contact links use the published email and social destinations. External forms and consent are demonstrations, with no external requests or saved choices.&lt;/p&gt;
+&lt;div class=&quot;button-row&quot;&gt;&lt;a href=&quot;#index&quot;&gt;Index&lt;/a&gt;&lt;a href=&quot;#archive&quot;&gt;Archive&lt;/a&gt;&lt;a href=&quot;#article&quot;&gt;Article&lt;/a&gt;&lt;a href=&quot;#consultations&quot;&gt;Consultations&lt;/a&gt;&lt;a href=&quot;#providers&quot;&gt;Providers&lt;/a&gt;&lt;a href=&quot;#profile&quot;&gt;Profile / Uses&lt;/a&gt;&lt;a href=&quot;#contact&quot;&gt;Contact&lt;/a&gt;&lt;a href=&quot;#not-found&quot;&gt;404&lt;/a&gt;&lt;a href=&quot;#cookies&quot;&gt;Cookies&lt;/a&gt;&lt;/div&gt;
+&lt;section id=&quot;index&quot;&gt;&lt;p class=&quot;specimen-label&quot;&gt;Index / long title / pagination boundaries&lt;/p&gt;&lt;div class=&quot;section-line&quot;&gt;&lt;h2&gt;Latest articles&lt;/h2&gt;&lt;a href=&quot;#archive&quot;&gt;Browse the archive ↗&lt;/a&gt;&lt;/div&gt;&lt;article class=&quot;post-row&quot;&gt;&lt;div class=&quot;post-date&quot;&gt;&lt;time datetime=&quot;2026-09-07&quot;&gt;07 Sep 2026&lt;/time&gt;&lt;span&gt;EN&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;h2&gt;&lt;a href=&quot;#article&quot;&gt;Think Before You Build: Side Project Economics in the AI Era&lt;/a&gt;&lt;/h2&gt;&lt;p class=&quot;post-excerpt&quot;&gt;AI can turn a rough idea into working code before the coffee gets cold. It makes coding cheaper and faster, but it does not make a side project free.&lt;/p&gt;&lt;div class=&quot;post-row-bottom&quot;&gt;&lt;div class=&quot;tag-links&quot;&gt;&lt;a href=&quot;#archive&quot;&gt;ai&lt;/a&gt;&lt;a href=&quot;#archive&quot;&gt;software-engineering&lt;/a&gt;&lt;/div&gt;&lt;a class=&quot;read-more&quot; href=&quot;#article&quot;&gt;Read article ↗&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/article&gt;&lt;nav class=&quot;pagination&quot; aria-label=&quot;Article pages&quot;&gt;&lt;span class=&quot;button disabled&quot; aria-disabled=&quot;true&quot;&gt;← Newer&lt;/span&gt;&lt;div class=&quot;page-numbers&quot;&gt;&lt;span aria-current=&quot;page&quot;&gt;1&lt;/span&gt;&lt;a href=&quot;#index&quot;&gt;2&lt;/a&gt;&lt;a href=&quot;#index&quot;&gt;3&lt;/a&gt;&lt;/div&gt;&lt;a class=&quot;button&quot; href=&quot;#index&quot;&gt;Older →&lt;/a&gt;&lt;/nav&gt;&lt;/section&gt;
+&lt;section id=&quot;archive&quot;&gt;&lt;p class=&quot;specimen-label&quot;&gt;Archive / selected filter / empty state (static)&lt;/p&gt;&lt;details class=&quot;topic-picker&quot; open&gt;&lt;summary&gt;Filter by topic &lt;span&gt;ai&lt;/span&gt;&lt;/summary&gt;&lt;div class=&quot;archive-filters&quot; role=&quot;group&quot; aria-label=&quot;Example topic filters&quot;&gt;&lt;button aria-pressed=&quot;false&quot;&gt;Show all &lt;span&gt;19&lt;/span&gt;&lt;/button&gt;&lt;button aria-pressed=&quot;true&quot;&gt;ai &lt;span&gt;6&lt;/span&gt;&lt;/button&gt;&lt;button aria-pressed=&quot;false&quot;&gt;spring-boot &lt;span&gt;3&lt;/span&gt;&lt;/button&gt;&lt;/div&gt;&lt;/details&gt;&lt;p class=&quot;archive-status&quot;&gt;Example filtered view&lt;/p&gt;&lt;section class=&quot;archive-year&quot;&gt;&lt;h2&gt;2026&lt;/h2&gt;&lt;div&gt;&lt;article class=&quot;archive-entry&quot;&gt;&lt;time&gt;07 Sep&lt;/time&gt;&lt;h3&gt;&lt;a href=&quot;#article&quot;&gt;Think Before You Build: Side Project Economics in the AI Era&lt;/a&gt;&lt;/h3&gt;&lt;/article&gt;&lt;/div&gt;&lt;/section&gt;&lt;p class=&quot;archive-status&quot;&gt;Empty-state specimen: No articles for this topic. Choose Show all to browse the archive.&lt;/p&gt;&lt;/section&gt;
+&lt;section id=&quot;article&quot;&gt;&lt;p class=&quot;specimen-label&quot;&gt;Article / TOC / highlighted code / downloads / footer&lt;/p&gt;&lt;header class=&quot;page-heading&quot;&gt;&lt;h1&gt;How to configure CORS in Spring Boot&lt;/h1&gt;&lt;div class=&quot;article-meta&quot;&gt;&lt;time&gt;27 Feb 2023&lt;/time&gt;&lt;span&gt;EN&lt;/span&gt;&lt;span&gt;Michał Mazur&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;tag-links&quot;&gt;&lt;a href=&quot;#archive&quot;&gt;spring-boot&lt;/a&gt;&lt;a href=&quot;#archive&quot;&gt;security&lt;/a&gt;&lt;/div&gt;&lt;/header&gt;&lt;div class=&quot;reading-grid&quot;&gt;&lt;aside class=&quot;article-toc&quot; data-toc hidden&gt;&lt;details open&gt;&lt;summary&gt;On this page&lt;/summary&gt;&lt;nav aria-label=&quot;Table of contents&quot;&gt;&lt;ol&gt;&lt;/ol&gt;&lt;/nav&gt;&lt;/details&gt;&lt;/aside&gt;&lt;div class=&quot;page-body prose&quot;&gt;&lt;div class=&quot;article__content&quot;&gt;&lt;p&gt;Technical content retains heading fragments, selectable code and natural image proportions. The code below tests local horizontal scrolling.&lt;/p&gt;&lt;h2 id=&quot;code-example&quot;&gt;Configuration example&lt;/h2&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;addCorsMappings&lt;/span&gt;(CorsRegistry registry) {
+    registry.addMapping(&lt;span class=&quot;s&quot;&gt;&quot;/api/**&quot;&lt;/span&gt;).allowedOrigins(&lt;span class=&quot;s&quot;&gt;&quot;https://example.com&quot;&lt;/span&gt;).allowedMethods(&lt;span class=&quot;s&quot;&gt;&quot;GET&quot;&lt;/span&gt;);
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p class=&quot;warning&quot;&gt;Warning: Keep registry credentials out of published build logs.&lt;/p&gt;&lt;h3 id=&quot;nested-example&quot;&gt;Nested content&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;Preserve the original endpoint.&lt;ul&gt;&lt;li&gt;Keep the request method and response headers visible.&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h2 id=&quot;resource-example&quot; lang=&quot;pl&quot;&gt;Prezentacja i materiały&lt;/h2&gt;&lt;p lang=&quot;pl&quot;&gt;&lt;a href=&quot;#providers&quot;&gt;Pobierz prezentację PDF ↗&lt;/a&gt;&lt;/p&gt;&lt;div class=&quot;table-scroll&quot; tabindex=&quot;0&quot; role=&quot;region&quot; aria-label=&quot;Table specimen&quot;&gt;&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Resource&lt;/th&gt;&lt;th&gt;Format&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Presentation&lt;/td&gt;&lt;td&gt;PDF&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;/div&gt;&lt;footer class=&quot;article__footer&quot;&gt;&lt;a href=&quot;#main&quot;&gt;Subscribe via RSS&lt;/a&gt;&lt;/footer&gt;&lt;div class=&quot;article__section-navigator&quot;&gt;&lt;div class=&quot;previous&quot;&gt;&lt;span&gt;Previous&lt;/span&gt;&lt;a href=&quot;#article&quot;&gt;How to generate Spring Boot configuration&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;next&quot;&gt;&lt;span&gt;Next&lt;/span&gt;&lt;a href=&quot;#article&quot;&gt;A practical application architecture&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/section&gt;
+&lt;section id=&quot;consultations&quot;&gt;&lt;p class=&quot;specimen-label&quot;&gt;Consultations / learning path / pricing and booking&lt;/p&gt;&lt;div class=&quot;consultation-container&quot;&gt;&lt;div class=&quot;expertise-grid&quot;&gt;&lt;div class=&quot;expertise-card&quot;&gt;&lt;span class=&quot;expertise-title&quot;&gt;Mentoring for Developers&lt;/span&gt;Advance your career with guidance tailored to your current skill level and aspirations.&lt;/div&gt;&lt;div class=&quot;expertise-card&quot;&gt;&lt;span class=&quot;expertise-title&quot;&gt;Cognitive Coaching&lt;/span&gt;Work on goals, motivation and obstacles alongside technical skills.&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;path-card&quot;&gt;&lt;h3 class=&quot;path-title&quot;&gt;1) Architecture 101: from fundamentals to confident design decisions&lt;/h3&gt;&lt;div class=&quot;path-section-header&quot;&gt;Great for you if&lt;/div&gt;&lt;ul class=&quot;path-list&quot;&gt;&lt;li&gt;You want a clear mental model of what architecture is.&lt;/li&gt;&lt;li&gt;You are moving from building features to designing systems.&lt;/li&gt;&lt;/ul&gt;&lt;div class=&quot;path-section-header&quot;&gt;What we will cover&lt;/div&gt;&lt;ul class=&quot;path-list&quot;&gt;&lt;li&gt;Boundaries, coupling, cohesion, abstraction and dependencies.&lt;/li&gt;&lt;li&gt;Architecture styles, quality attributes and their trade-offs.&lt;/li&gt;&lt;li&gt;Reliability patterns, decomposition and integration contracts.&lt;/li&gt;&lt;/ul&gt;&lt;div class=&quot;path-section-header&quot;&gt;Outcomes&lt;/div&gt;&lt;ul class=&quot;path-list&quot;&gt;&lt;li&gt;A decision framework and a practical improvement plan.&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;div class=&quot;cta-container&quot;&gt;&lt;h2&gt;Ready to level up?&lt;/h2&gt;&lt;p&gt;A free 30-minute consultation to discuss the next step.&lt;/p&gt;&lt;a class=&quot;cta-button&quot; href=&quot;#providers&quot;&gt;Book Free Consultation&lt;/a&gt;&lt;div class=&quot;highlight-box&quot;&gt;Pricing is discussed after the initial consultation, based on goals and available time.&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/section&gt;
+&lt;section id=&quot;providers&quot;&gt;&lt;p class=&quot;specimen-label&quot;&gt;External forms / automatic loading / provider unavailable&lt;/p&gt;&lt;div class=&quot;provider-panel&quot;&gt;&lt;p&gt;The involve.me form loads automatically when the page opens.&lt;/p&gt;&lt;p class=&quot;provider-fallback&quot;&gt;&lt;a href=&quot;#providers&quot;&gt;Open directly on involve.me ↗&lt;/a&gt;&lt;/p&gt;&lt;p class=&quot;provider-status&quot;&gt;The service could not load. Use the direct link above.&lt;/p&gt;&lt;/div&gt;&lt;div class=&quot;provider-panel&quot; lang=&quot;pl&quot;&gt;&lt;p&gt;Formularz Tally wczytuje się automatycznie po otwarciu strony.&lt;/p&gt;&lt;p class=&quot;provider-fallback&quot;&gt;&lt;a href=&quot;#providers&quot;&gt;Otwórz bezpośrednio w Tally ↗&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;Disqus comments also load automatically on every blog post. AddToAny sharing remains optional. Both keep direct links. This specimen does not connect to providers.&lt;/p&gt;&lt;/section&gt;
+&lt;section id=&quot;profile&quot;&gt;&lt;p class=&quot;specimen-label&quot;&gt;About / Uses / reading layout&lt;/p&gt;&lt;div class=&quot;prose&quot;&gt;&lt;h2&gt;About&lt;/h2&gt;&lt;p&gt;My name is Michał Mazur and this is my technical blog or my library with my thoughts, case studies from my career, tutorials etc.&lt;/p&gt;&lt;h2&gt;Hardware&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Computer:&lt;/strong&gt; MacBook Pro 16&#39;&#39; (2019), 32GB RAM&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Keyboard:&lt;/strong&gt; Mx Keys Wireless Keyboard&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Full biographies, equipment lists, links and the author disclaimer remain on their production pages.&lt;/p&gt;&lt;/div&gt;&lt;/section&gt;
+&lt;section id=&quot;contact&quot;&gt;&lt;p class=&quot;specimen-label&quot;&gt;Contact / primary email / secondary social profiles&lt;/p&gt;&lt;header class=&quot;page-heading&quot;&gt;&lt;h2&gt;Contact&lt;/h2&gt;&lt;/header&gt;
+&lt;div class=&quot;contact-page&quot;&gt;
+  &lt;a class=&quot;contact-email&quot; href=&quot;mailto:kontakt@cybershu.eu&quot;&gt;
+    &lt;span class=&quot;contact-email-content&quot;&gt;
+      &lt;span class=&quot;contact-label&quot;&gt;Email&lt;/span&gt;
+      &lt;span class=&quot;contact-address&quot;&gt;kontakt@cybershu.eu&lt;/span&gt;
+    &lt;/span&gt;
+    &lt;svg class=&quot;contact-email-icon&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;24&quot; height=&quot;24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.5&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;path d=&quot;M4 12h16M13 5l7 7-7 7&quot;/&gt;&lt;/svg&gt;
+  &lt;/a&gt;
+  &lt;nav class=&quot;contact-socials&quot; aria-label=&quot;Social profiles&quot;&gt;
+    &lt;a href=&quot;https://www.linkedin.com/in/michmzr&quot;&gt;
+      &lt;svg viewBox=&quot;0 0 24 24&quot; width=&quot;24&quot; height=&quot;24&quot; fill=&quot;currentColor&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;path d=&quot;M5.2 3a2.2 2.2 0 1 0 0 4.4 2.2 2.2 0 0 0 0-4.4ZM3.4 9h3.6v12H3.4V9Zm5.8 0h3.5v1.6h.1c.5-.9 1.7-1.9 3.6-1.9 3.8 0 4.6 2.5 4.6 5.8V21h-3.7v-5.8c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V21H9.2V9Z&quot;/&gt;&lt;/svg&gt;
+      &lt;span&gt;LinkedIn&lt;/span&gt;
+    &lt;/a&gt;
+    &lt;a href=&quot;https://twitter.com/MichalMzr&quot;&gt;
+      &lt;svg viewBox=&quot;0 0 24 24&quot; width=&quot;24&quot; height=&quot;24&quot; fill=&quot;currentColor&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;path d=&quot;M18.9 2H22l-6.8 7.8L23.2 22h-6.3L12 14.6 5.5 22H2.3l8.2-9.4L.8 2h6.5l4.5 6.8L18.9 2Zm-1.1 18h1.7L6.4 3.9H4.6L17.8 20Z&quot;/&gt;&lt;/svg&gt;
+      &lt;span&gt;X&lt;/span&gt;
+    &lt;/a&gt;
+    &lt;a href=&quot;https://github.com/michmzr&quot;&gt;
+      &lt;svg viewBox=&quot;0 0 24 24&quot; width=&quot;24&quot; height=&quot;24&quot; fill=&quot;currentColor&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;path d=&quot;M12 .8a11.2 11.2 0 0 0-3.5 21.8c.6.1.8-.2.8-.5v-2.1c-3.3.7-4-1.4-4-1.4-.5-1.3-1.3-1.6-1.3-1.6-1.1-.8.1-.8.1-.8 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.6 0-1.2.4-2.2 1.2-3-.1-.3-.5-1.4.1-3 0 0 1-.3 3.1 1.1a10.7 10.7 0 0 1 5.6 0c2.1-1.4 3.1-1.1 3.1-1.1.6 1.6.2 2.7.1 3 .8.8 1.2 1.8 1.2 3 0 4.3-2.8 5.3-5.5 5.6.4.4.8 1.1.8 2.2v3.1c0 .3.2.6.8.5A11.2 11.2 0 0 0 12 .8Z&quot;/&gt;&lt;/svg&gt;
+      &lt;span&gt;GitHub&lt;/span&gt;
+    &lt;/a&gt;
+  &lt;/nav&gt;
+&lt;/div&gt;
+&lt;/section&gt;
+&lt;section id=&quot;not-found&quot;&gt;&lt;p class=&quot;specimen-label&quot;&gt;404 / recovery actions&lt;/p&gt;&lt;div class=&quot;not-found&quot;&gt;&lt;h2&gt;404&lt;/h2&gt;&lt;p&gt;Page not found :(&lt;/p&gt;&lt;div class=&quot;button-row&quot;&gt;&lt;a class=&quot;button button-primary&quot; href=&quot;#index&quot;&gt;Back to articles&lt;/a&gt;&lt;a class=&quot;button&quot; href=&quot;#archive&quot;&gt;Browse archive&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/section&gt;
+&lt;section id=&quot;cookies&quot;&gt;&lt;p class=&quot;specimen-label&quot;&gt;Compact cookies / equal choices / disclosure (static)&lt;/p&gt;&lt;div class=&quot;cookie-dialog sample-cookie&quot;&gt;&lt;h2&gt;A small note on cookies&lt;/h2&gt;&lt;p&gt;Optional cookies enable analytics and sharing tools. Forms and comments load automatically.&lt;/p&gt;&lt;details&gt;&lt;summary&gt;What is stored?&lt;/summary&gt;&lt;p&gt;A versioned choice for six months. Production settings can be reopened from the footer. This example stores nothing.&lt;/p&gt;&lt;/details&gt;&lt;div class=&quot;cookie-actions&quot;&gt;&lt;button type=&quot;button&quot;&gt;Reject optional&lt;/button&gt;&lt;button type=&quot;button&quot;&gt;Accept optional&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;&lt;/section&gt;
+&lt;/main&gt;
+&lt;footer class=&quot;site-footer&quot;&gt;&lt;div class=&quot;site-container&quot;&gt;&lt;div class=&quot;footer-grid&quot;&gt;&lt;div&gt;&lt;a class=&quot;brand&quot; href=&quot;#main&quot;&gt;Cyber&lt;span&gt;Shu&lt;/span&gt;&lt;/a&gt;&lt;p&gt;Michał Mazur&lt;br&gt;&lt;span class=&quot;muted-dark&quot;&gt;Software Engineer&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;nav aria-label=&quot;Footer example&quot;&gt;&lt;h2&gt;Explore&lt;/h2&gt;&lt;a href=&quot;#index&quot;&gt;Articles&lt;/a&gt;&lt;a href=&quot;#archive&quot;&gt;Archive&lt;/a&gt;&lt;a href=&quot;#profile&quot;&gt;Uses&lt;/a&gt;&lt;/nav&gt;&lt;nav aria-label=&quot;Contact example&quot;&gt;&lt;h2&gt;Get in touch&lt;/h2&gt;&lt;a href=&quot;#contact&quot;&gt;Contact&lt;/a&gt;&lt;a href=&quot;#consultations&quot;&gt;Consultations&lt;/a&gt;&lt;a href=&quot;#profile&quot;&gt;About&lt;/a&gt;&lt;/nav&gt;&lt;nav aria-label=&quot;Social example&quot;&gt;&lt;h2&gt;Elsewhere&lt;/h2&gt;&lt;a href=&quot;#main&quot;&gt;LinkedIn ↗&lt;/a&gt;&lt;a href=&quot;#main&quot;&gt;X ↗&lt;/a&gt;&lt;a href=&quot;#main&quot;&gt;GitHub ↗&lt;/a&gt;&lt;a href=&quot;#main&quot;&gt;RSS feed ↗&lt;/a&gt;&lt;/nav&gt;&lt;/div&gt;&lt;div class=&quot;footer-bottom&quot;&gt;&lt;p&gt;© 2026 CyberShu · Michał Mazur&lt;/p&gt;&lt;a href=&quot;#cookies&quot;&gt;Cookie settings&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/footer&gt;
+&lt;dialog id=&quot;site-search&quot; class=&quot;search-dialog&quot; aria-labelledby=&quot;search-title&quot;&gt;&lt;div class=&quot;dialog-heading&quot;&gt;&lt;h2 id=&quot;search-title&quot;&gt;Search articles&lt;/h2&gt;&lt;button data-search-close&gt;Close ×&lt;/button&gt;&lt;/div&gt;&lt;label for=&quot;search-query&quot;&gt;Title or keyword&lt;/label&gt;&lt;div class=&quot;search-field&quot;&gt;&lt;input id=&quot;search-query&quot; type=&quot;search&quot; placeholder=&quot;Try Spring&quot;&gt;&lt;button data-search-clear&gt;Clear&lt;/button&gt;&lt;/div&gt;&lt;p data-search-status role=&quot;status&quot;&gt;&lt;/p&gt;&lt;ul data-search-results class=&quot;search-results&quot;&gt;&lt;/ul&gt;&lt;/dialog&gt;
+&lt;script&gt;window.TEXT_SEARCH_DATA={posts:[{title:&#39;How to configure CORS in Spring Boot&#39;,url:&#39;#article&#39;},{title:&#39;Think Before You Build: Side Project Economics in the AI Era&#39;,url:&#39;#index&#39;}]}; (() =&gt; {
+  &#39;use strict&#39;;
+  const toggle = document.querySelector(&#39;[data-menu-toggle]&#39;);
+  const navigation = document.querySelector(&#39;#site-navigation&#39;);
+  const mobile = matchMedia(&#39;(max-width: 1023px)&#39;);
+  if (toggle &amp;&amp; navigation) {
+    toggle.hidden = false;
+    const collapse = () =&gt; {
+      toggle.setAttribute(&#39;aria-expanded&#39;, &#39;false&#39;);
+      navigation.dataset.collapsed = String(mobile.matches);
+    };
+    collapse();
+    mobile.addEventListener(&#39;change&#39;, collapse);
+    toggle.addEventListener(&#39;click&#39;, () =&gt; {
+      const expanded = toggle.getAttribute(&#39;aria-expanded&#39;) === &#39;true&#39;;
+      toggle.setAttribute(&#39;aria-expanded&#39;, String(!expanded));
+      navigation.dataset.collapsed = String(expanded);
+    });
+    navigation.addEventListener(&#39;keydown&#39;, event =&gt; {
+      if (event.key === &#39;Escape&#39; &amp;&amp; mobile.matches) { collapse(); toggle.focus(); }
+    });
+  }
+  const article = document.querySelector(&#39;.article__content&#39;);
+  const toc = document.querySelector(&#39;[data-toc]&#39;);
+  if (article) {
+    const headings = article.querySelectorAll(&#39;h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]&#39;);
+    const list = toc &amp;&amp; toc.querySelector(&#39;ol&#39;);
+    const selectors = toc ? (toc.dataset.tocSelectors || &#39;h1,h2,h3&#39;) : &#39;&#39;;
+    headings.forEach(heading =&gt; {
+      const title = heading.textContent;
+      const link = document.createElement(&#39;a&#39;);
+      link.href = &#39;#&#39; + encodeURIComponent(heading.id);
+      link.textContent = title;
+      if (list &amp;&amp; heading.matches(selectors)) {
+        const item = document.createElement(&#39;li&#39;);
+        if (heading.tagName === &#39;H3&#39;) item.className = &#39;toc-sub&#39;;
+        item.append(link); list.append(item);
+      }
+      const anchor = link.cloneNode(false);
+      anchor.textContent = &#39;#&#39;; anchor.className = &#39;heading-anchor&#39;;
+      anchor.setAttribute(&#39;aria-label&#39;, &#39;Link: &#39; + title);
+      heading.append(anchor);
+    });
+    if (toc) {
+      toc.hidden = list.children.length === 0;
+      const disclosure = toc.querySelector(&#39;details&#39;);
+      disclosure.open = !mobile.matches;
+      mobile.addEventListener(&#39;change&#39;, () =&gt; { disclosure.open = !mobile.matches; });
+    }
+  }
+  document.querySelectorAll(&#39;.prose table&#39;).forEach(table =&gt; {
+    const wrapper = document.createElement(&#39;div&#39;);
+    wrapper.className = &#39;table-scroll&#39;; wrapper.tabIndex = 0;
+    wrapper.setAttribute(&#39;role&#39;, &#39;region&#39;); wrapper.setAttribute(&#39;aria-label&#39;, &#39;Scrollable table&#39;);
+    table.before(wrapper); wrapper.append(table);
+  });
+  document.querySelectorAll(&#39;pre&#39;).forEach(pre =&gt; {
+    pre.tabIndex = 0; pre.setAttribute(&#39;aria-label&#39;, &#39;Code sample&#39;);
+  });
+})();
+
+(() =&gt; {
+  &#39;use strict&#39;;
+  const archive = document.querySelector(&#39;[data-archive]&#39;);
+  if (archive) {
+    const filters = [...archive.querySelectorAll(&#39;[data-tag]&#39;)];
+    const entries = [...archive.querySelectorAll(&#39;[data-archive-entry]&#39;)];
+    const apply = () =&gt; {
+      const tag = new URL(location.href).searchParams.get(&#39;tag&#39;) || &#39;&#39;;
+      const label = archive.querySelector(&#39;[data-filter-label]&#39;);
+      if (label) label.textContent = tag || &#39;All topics&#39;;
+      let count = 0;
+      entries.forEach(entry =&gt; {
+        entry.hidden = !!tag &amp;&amp; !JSON.parse(entry.dataset.tags).includes(tag);
+        if (!entry.hidden) count++;
+      });
+      filters.forEach(button =&gt; button.setAttribute(&#39;aria-pressed&#39;, String(button.dataset.tag === tag)));
+      archive.querySelectorAll(&#39;[data-year]&#39;).forEach(year =&gt; {
+        year.hidden = ![...year.querySelectorAll(&#39;[data-archive-entry]&#39;)].some(entry =&gt; !entry.hidden);
+      });
+      archive.querySelector(&#39;[data-archive-status]&#39;).textContent = count ? count + &#39; article&#39; + (count === 1 ? &#39;&#39; : &#39;s&#39;) + (tag ? &#39; tagged “&#39; + tag + &#39;”&#39; : &#39;&#39;) : &#39;No articles for this topic. Choose Show all to browse the archive.&#39;;
+    };
+    filters.forEach(button =&gt; button.addEventListener(&#39;click&#39;, () =&gt; {
+      const url = new URL(location.href);
+      if (button.dataset.tag) url.searchParams.set(&#39;tag&#39;, button.dataset.tag);
+      else url.searchParams.delete(&#39;tag&#39;);
+      history.pushState(null, &#39;&#39;, url); apply();
+    }));
+    window.addEventListener(&#39;popstate&#39;, apply); apply();
+  }
+  const dialog = document.querySelector(&#39;#site-search&#39;);
+  if (!dialog) return;
+  const input = dialog.querySelector(&#39;input&#39;);
+  const results = dialog.querySelector(&#39;[data-search-results]&#39;);
+  const status = dialog.querySelector(&#39;[data-search-status]&#39;);
+  let opener;
+  const render = () =&gt; {
+    results.replaceChildren();
+    const query = input.value.trim().toLocaleLowerCase();
+    if (!query) { status.textContent = &#39;Enter a title or keyword to find an article.&#39;; return; }
+    if (!window.TEXT_SEARCH_DATA) { status.textContent = &#39;Search is unavailable. Browse the archive instead.&#39;; return; }
+    const matches = Object.values(window.TEXT_SEARCH_DATA).flat().filter(post =&gt; post.title &amp;&amp; post.title.toLocaleLowerCase().includes(query));
+    matches.forEach(post =&gt; {
+      const li = document.createElement(&#39;li&#39;);
+      const link = document.createElement(&#39;a&#39;);
+      link.href = post.url; link.textContent = post.title; li.append(link); results.append(li);
+    });
+    status.textContent = matches.length ? matches.length + &#39; result&#39; + (matches.length === 1 ? &#39;&#39; : &#39;s&#39;) : &#39;No articles found. Try a different title or keyword.&#39;;
+  };
+  document.querySelectorAll(&#39;[data-search-open]&#39;).forEach(button =&gt; button.addEventListener(&#39;click&#39;, () =&gt; {
+    opener = button; dialog.showModal(); input.focus(); render();
+  }));
+  dialog.querySelector(&#39;[data-search-close]&#39;).addEventListener(&#39;click&#39;, () =&gt; dialog.close());
+  dialog.addEventListener(&#39;close&#39;, () =&gt; { if (opener) opener.focus(); });
+  dialog.querySelector(&#39;[data-search-clear]&#39;).addEventListener(&#39;click&#39;, () =&gt; { input.value = &#39;&#39;; render(); input.focus(); });
+  input.addEventListener(&#39;input&#39;, render);
+  dialog.addEventListener(&#39;keydown&#39;, event =&gt; {
+    const links = [...results.querySelectorAll(&#39;a&#39;)];
+    if (!links.length) return;
+    const index = links.indexOf(document.activeElement);
+    if (event.key === &#39;ArrowDown&#39;) { event.preventDefault(); links[(index + 1) % links.length].focus(); }
+    if (event.key === &#39;ArrowUp&#39;) { event.preventDefault(); links[index &lt;= 0 ? links.length - 1 : index - 1].focus(); }
+    if (event.key === &#39;Enter&#39; &amp;&amp; document.activeElement === input) { event.preventDefault(); links[0].click(); }
+  });
+})();
+&lt;/script&gt;
+&lt;/body&gt;&lt;/html&gt;
+"></iframe>
+    </section>
   </main>
-  <footer class="container footer"><p>CyberShu / style guide</p><p>Source: <a href="DESIGN.md">DESIGN.md</a> · <a href="design-reference/fonts/LICENSE.txt">Inter license</a></p><details><summary>Updating the preview</summary><p>Generate tokens and specimens with <code>pnpm style-guide:build</code>. Use <code>pnpm style-guide:watch</code> to regenerate the file after source changes; refresh the browser to see the result. Freshness check: <code>pnpm style-guide:check</code>.</p><p class="caption">Source fingerprint: <code>b56ea363ae08</code>. These specimens do not implement changes on the production website.</p></details></footer>
+  <footer class="container footer"><p>CyberShu / style guide</p><p>Source: <a href="DESIGN.md">DESIGN.md</a> · <a href="design-reference/fonts/LICENSE.txt">Inter license</a></p><details><summary>Updating the preview</summary><p>Generate tokens and specimens with <code>pnpm style-guide:build</code>. Use <code>pnpm style-guide:watch</code> to regenerate the file after source changes; refresh the browser to see the result. Freshness check: <code>pnpm style-guide:check</code>.</p><p class="caption">Source fingerprint: <code>1ebbdf764a1d</code>. These specimens do not implement changes on the production website.</p></details></footer>
   <script>/* Local demonstrations only: no requests, storage or submissions. */
 document.querySelectorAll('[data-demo-action]').forEach(function (button) {
   button.addEventListener('click', function () {

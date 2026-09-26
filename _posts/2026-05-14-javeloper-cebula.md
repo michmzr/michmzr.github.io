@@ -9,13 +9,14 @@ key: javeloper-2026-zrob-cebulowego-sassa-notatki-prelegenta
  
 Na stronie znajdziesz moja prezentacje z konferencji ["Javeloper 2026"](https://javeloper.pl/#okonferencji) jak i myślę przydatne linki uzupełniające.  
 
+<!--more-->
+
 ## Prezentacja
 **PDF:**
 [prezentacja](/assets/docs/prezentacja.pdf)
 
 ## Jakie są Twoje wrazenia z prezentacji? 
-<iframe data-tally-src="https://tally.so/embed/obK4Me?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&formEventsForwarding=1" loading="lazy" width="100%" height="1395" frameborder="0" marginheight="0" marginwidth="0" title="Javeloper 2026- Twoje wrażenia"></iframe>
-<script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+{% include provider.html name="Tally" lang="pl" url="https://tally.so/r/obK4Me" embed="https://tally.so/embed/obK4Me?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&formEventsForwarding=1" title="Javeloper 2026 - Twoje wrażenia" height="1395" %}
 
 ## Linki
 

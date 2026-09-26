@@ -5,7 +5,6 @@ layout: none
 {%- include snippets/get-lang.html -%}
 <html lang="{{ __return }}">
   <head>
-    {%- include analytics.html -%}
     {%- include head.html -%}
     <script>
       {%- include scripts/utils/utils.js -%}
@@ -14,12 +13,12 @@ layout: none
     </script>
     {%- include scripts/variables.html -%}
   </head>
-  <body>
+  <body {% if site.analytics.provider == 'google' %}data-analytics-id="{{ site.analytics.google.tracking_id }}"{% endif %}>
     <div class="root" data-is-touch="false">
       {{ content }}
     </div>
-    <script>
-      {%- include scripts/common.js -%}
-    </script>
+    <script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>
+    <script src="{{ '/assets/js/discovery.js' | relative_url }}" defer></script>
+    <script src="{{ '/assets/js/consent.js' | relative_url }}" defer></script>
   </body>
 </html>

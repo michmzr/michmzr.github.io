@@ -1,20 +1,7 @@
-{%- include snippets/get-locale-string.html key='CANCEL' -%}
-{%- assign _locale_cancel = __return -%}
-{%- include snippets/get-locale-string.html key='SEARCH' -%}
-{%- assign _locale_search = __return -%}
-
-{%- if site.search.provider == 'google' -%}
-  <script>window.useDefaultSearchBox = false;</script>
-{%- endif -%}
-
-{%- if site.search.provider -%}
-  <script>{%- include scripts/components/search.js -%}</script>
-{%- endif -%}
-
-{%- if site.search.provider == 'default' -%}
-  {%- include search-providers/default/search.html -%}
-{%- elsif site.search.provider == 'google' -%}
-  {%- include search-providers/google-custom-search-engine/search.html -%}
-{%- elsif site.search.provider == 'custom' -%}
-  {%- include search-providers/custom/search.html -%}
-{%- endif -%}
+<dialog id="site-search" class="search-dialog" aria-labelledby="search-title" lang="en">
+  <div class="dialog-heading"><h2 id="search-title">Search articles</h2><button data-search-close aria-label="Close search">Close ×</button></div>
+  <label for="search-query">Title or keyword</label>
+  <div class="search-field"><input id="search-query" type="search" autocomplete="off" placeholder="Try architecture, AI, Spring…"><button data-search-clear>Clear</button></div>
+  <p data-search-status role="status" aria-live="polite">Enter a title or keyword to find an article.</p><ul data-search-results class="search-results"></ul>
+</dialog>
+<script src="{{ '/assets/search.js' | relative_url }}" defer></script>

@@ -11,161 +11,7 @@ titles:
 key: consultations
 ---
 
-<style>
-/* Page-specific styles */
-.consultation-container {
-    max-width: 100%;
-    margin: 0 auto;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    color: #333;
-    line-height: 1.6;
-}
 
-.intro-section {
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    padding: 2rem;
-    border-radius: 8px;
-    margin-bottom: 2rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-}
-
-.intro-text {
-    font-size: 1.1rem;
-    color: #2c3e50;
-}
-
-.section-title {
-    color: #2c3e50;
-    border-bottom: 2px solid #3498db;
-    padding-bottom: 0.5rem;
-    margin-top: 3rem;
-    margin-bottom: 1.5rem;
-    font-weight: 700;
-}
-
-/* Expertise Grid */
-.expertise-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 3rem;
-}
-
-.expertise-card {
-    background: #fff;
-    border: 1px solid #e1e4e8;
-    border-radius: 6px;
-    padding: 1.5rem;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.expertise-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    border-color: #3498db;
-}
-
-.expertise-title {
-    font-weight: 600;
-    color: #2980b9;
-    margin-bottom: 0.5rem;
-    display: block;
-}
-
-/* Learning Paths */
-.path-card {
-    background: #ffffff;
-    border-left: 4px solid #3498db;
-    border-radius: 0 8px 8px 0;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    margin-bottom: 2rem;
-    padding: 2rem;
-}
-
-.path-title {
-    font-size: 1.4rem;
-    color: #2c3e50;
-    margin-bottom: 1.5rem;
-    font-weight: 700;
-}
-
-.path-section-header {
-    font-weight: 600;
-    color: #34495e;
-    margin-top: 1.2rem;
-    margin-bottom: 0.5rem;
-    display: flex;
-    align-items: center;
-}
-
-.path-section-header::before {
-    content: '';
-    display: inline-block;
-    width: 6px;
-    height: 6px;
-    background-color: #3498db;
-    border-radius: 50%;
-    margin-right: 8px;
-}
-
-.path-list {
-    list-style-type: none;
-    padding-left: 0.5rem;
-}
-
-.path-list li {
-    margin-bottom: 0.4rem;
-    position: relative;
-    padding-left: 1.2rem;
-}
-
-.path-list li::before {
-    content: "•";
-    color: #95a5a6;
-    position: absolute;
-    left: 0;
-}
-
-/* CTA Section */
-.cta-container {
-    background-color: #f8f9fa;
-    border: 1px solid #e9ecef;
-    border-radius: 8px;
-    padding: 2.5rem;
-    text-align: center;
-    margin-top: 4rem;
-    margin-bottom: 2rem;
-}
-
-.cta-button {
-    display: inline-block;
-    background-color: #2ecc71;
-    color: white !important;
-    padding: 1rem 2rem;
-    border-radius: 50px;
-    font-weight: 700;
-    text-decoration: none;
-    font-size: 1.2rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    transition: background-color 0.2s;
-    box-shadow: 0 4px 6px rgba(46, 204, 113, 0.3);
-}
-
-.cta-button:hover {
-    background-color: #27ae60;
-    text-decoration: none;
-    transform: translateY(-1px);
-}
-
-.highlight-box {
-    background-color: #fff3cd;
-    border-left: 4px solid #ffc107;
-    padding: 1rem;
-    margin: 1rem 0;
-    border-radius: 0 4px 4px 0;
-}
-</style>
 
 <div class="consultation-container">
 
@@ -247,15 +93,15 @@ key: consultations
 
     <h2 class="section-title">My Educational Approach</h2>
     <div class="expertise-grid">
-        <div class="expertise-card" style="border-left: 4px solid #2ecc71;">
+        <div class="expertise-card">
             <span class="expertise-title">Practice, Practice, Practice</span>
             We focus on hands-on exercises and real-world scenarios. I believe in <strong>deliberate practice</strong>—structured, challenging tasks designed to push your limits and provide immediate, actionable feedback.
         </div>
-        <div class="expertise-card" style="border-left: 4px solid #2ecc71;">
+        <div class="expertise-card">
             <span class="expertise-title">Hyper-Individualized</span>
             No cookie-cutter curriculums. Every session is adapted to your specific goals, current pace, and progress. We pivot as needed to ensure you're always learning what matters most to <em>you</em>.
         </div>
-        <div class="expertise-card" style="border-left: 4px solid #9b59b6;">
+        <div class="expertise-card">
             <span class="expertise-title">Cognitive Coaching</span>
             As a trained cognitive coach, I help you beyond just code. We’ll work on defining clear goals, maintaining motivation, and overcoming the mental or emotional blocks (like impostor syndrome) that might be holding you back.
         </div>
@@ -267,7 +113,7 @@ key: consultations
 
         <a href="#book-consultation" class="cta-button">Book Free Consultation</a>
 
-        <div class="highlight-box" style="text-align: left; margin-top: 2rem;">
+        <div class="highlight-box">
             <strong>Transparent Pricing:</strong> After our chat, we’ll talk about pricing based on what you’re looking for, how long you want to learn, and how much time you can commit. If you’re really into learning and ready to dive deep, I’m here to make it work for your budget.
         </div>
     </div>
@@ -276,7 +122,7 @@ key: consultations
     <p>These are examples you can pick from (and mix). Each path can be done as mentoring, hands-on workshops on your repo, or a hybrid—depending on how you learn best.</p>
 
     <div class="path-card">
-        <div class="path-title">1) Architecture 101 — from fundamentals to confident design decisions</div>
+        <h3 class="path-title">1) Architecture 101 — from fundamentals to confident design decisions</h3>
         <div class="path-section-header">Great for you if</div>
         <ul class="path-list">
             <li>You want a clear mental model of “what architecture is” (and what it isn’t).</li>
@@ -307,7 +153,7 @@ key: consultations
     </div>
 
     <div class="path-card">
-        <div class="path-title">2) GitHub DevOps practices — PR flow, CI/CD, releases, and repo hygiene</div>
+        <h3 class="path-title">2) GitHub DevOps practices — PR flow, CI/CD, releases, and repo hygiene</h3>
         <div class="path-section-header">Great for you if</div>
         <ul class="path-list">
             <li>Your CI/CD feels fragile, slow, or inconsistent.</li>
@@ -338,7 +184,7 @@ key: consultations
     </div>
 
     <div class="path-card">
-        <div class="path-title">3) Spring Boot 101 — solid foundations, production-ready habits</div>
+        <h3 class="path-title">3) Spring Boot 101 — solid foundations, production-ready habits</h3>
         <div class="path-section-header">Great for you if</div>
         <ul class="path-list">
             <li>You’re building (or maintaining) backend services and want clarity + best practices.</li>
@@ -368,7 +214,7 @@ key: consultations
     </div>
 
     <div class="path-card">
-        <div class="path-title">4) No-code / low-code automation — Make.com, n8n, APIs, and AI workflows</div>
+        <h3 class="path-title">4) No-code / low-code automation — Make.com, n8n, APIs, and AI workflows</h3>
         <div class="path-section-header">Great for you if</div>
         <ul class="path-list">
             <li>Your team does repeatable work manually (and it’s draining time).</li>
@@ -397,7 +243,7 @@ key: consultations
     </div>
 
     <div class="path-card">
-        <div class="path-title">5) AI in practice — automations, vibe coding, context engineering, model evaluation</div>
+        <h3 class="path-title">5) AI in practice — automations, vibe coding, context engineering, model evaluation</h3>
         <div class="path-section-header">Great for you if</div>
         <ul class="path-list">
             <li>You want AI to speed you up without losing code quality or safety.</li>
@@ -427,7 +273,7 @@ key: consultations
     </div>
 
     <div class="path-card">
-        <div class="path-title">6) Secure coding + testing + DevOps — reliability, environment safety, and secure SDLC</div>
+        <h3 class="path-title">6) Secure coding + testing + DevOps — reliability, environment safety, and secure SDLC</h3>
         <div class="path-section-header">Great for you if</div>
         <ul class="path-list">
             <li>You want to raise security and reliability without turning your process into bureaucracy.</li>
@@ -462,12 +308,12 @@ key: consultations
 
         <a href="#book-consultation" class="cta-button">Book Free Consultation</a>
 
-        <div class="highlight-box" style="text-align: left; margin-top: 2rem;">
+        <div class="highlight-box">
             <strong>Transparent Pricing:</strong> After our chat, we’ll talk about pricing based on what you’re looking for, how long you want to learn, and how much time you can commit. If you’re really into learning and ready to dive deep, I’m here to make it work for your budget.
         </div>
     </div>
 
     <div id="book-consultation">
-        <div class="involveme_embed" data-project="cybershu-consultation-inquiry-form-a822" data-transparent-embed="true"><script src="https://michal-mazur.involve.me/embed"></script></div>
+        {% include provider.html name="involve.me" url="https://michal-mazur.involve.me/cybershu-consultation-inquiry-form-a822" %}
     </div>
 </div>
