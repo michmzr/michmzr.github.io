@@ -31,7 +31,7 @@ const origin = process.env.SITE_URL || 'http://127.0.0.1:4174';
       await page.waitForFunction(() => window.disqusStarts === 1);
       const config = await page.evaluate(() => window.disqusSettings.page);
       assert.ok(config.identifier, path + ': thread identifier');
-      assert.equal(config.url, 'https://www.cybershu.eu' + path, path + ': canonical URL');
+      assert.equal(config.url, 'https://cybershu.eu' + path, path + ': canonical URL');
       assert.equal(await page.locator('[data-provider="Disqus"] #disqus_thread').count(), 1);
     }
     for (const path of ['/confitura-2026-resilience-w-erze-ai-notatki-prelegenta.html', '/javeloper-2026-zrob-cebulowego-sassa-notatki-prelegenta.html']) {

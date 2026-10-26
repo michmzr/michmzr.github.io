@@ -2,6 +2,7 @@
 
 require 'minitest/autorun'
 require 'nokogiri'
+require 'uri'
 
 # Run against a root-configuration Jekyll build, never the theme demo.
 class WebsiteTest < Minitest::Test
@@ -10,6 +11,52 @@ class WebsiteTest < Minitest::Test
 
   def document(path)
     Nokogiri::HTML(File.read(File.join(ROOT, path)))
+  end
+
+  def test_canonical_sitemap_and_robots_use_the_public_origin
+    sitemap = Nokogiri::XML(File.read(File.join(ROOT, 'sitemap.xml')))
+    locations = sitemap.xpath('//*[local-name()="loc"]').map(&:text)
+    refute_empty locations
+    locations.each do |location|
+      uri = URI(location)
+      assert_equal 'https', uri.scheme, location
+      assert_equal 'cybershu.eu', uri.host, location
+      path = uri.path.delete_prefix('/')
+      path += 'index.html' if path.empty? || path.end_with?('/')
+      assert File.file?(File.join(ROOT, path)), "Missing sitemap target: #{location}"
+    end
+    refute_includes locations, 'https://cybershu.eu/404.html'
+    assert_equal "Sitemap: https://cybershu.eu/sitemap.xml\n", File.read(File.join(ROOT, 'robots.txt'))
+
+    Dir.glob(File.join(ROOT, '**/*.html')).each do |path|
+      relative = path.delete_prefix(ROOT + '/')
+      route = '/' + relative.delete_suffix('index.html')
+      canonical = Nokogiri::HTML(File.read(path)).css('link[rel="canonical"]')
+      assert_equal 1, canonical.size, relative
+      assert_equal 'https://cybershu.eu' + route, canonical.first['href'], relative
+    end
+  end
+
+  def test_only_the_error_page_disallows_indexing
+    Dir.glob(File.join(ROOT, '**/*.html')).each do |path|
+      page = Nokogiri::HTML(File.read(path))
+      directives = page.css('meta[name="robots"]').flat_map { |meta| meta['content'].to_s.downcase.split(/[\s,]+/) }
+      if path == File.join(ROOT, '404.html')
+        assert_includes directives, 'noindex'
+      else
+        refute_includes directives, 'noindex', path
+      end
+    end
+  end
+
+  def test_author_and_external_blog_links
+    assert document('about.html').at_css('a[href="https://www.geekowojazer.pl/"]')
+    Dir.glob(File.join(ROOT, '**/*.html')).each do |path|
+      page = Nokogiri::HTML(File.read(path))
+      page.css('meta[property="article:author"]').each do |author|
+        assert_equal 'https://cybershu.eu/about.html', author['content'], path
+      end
+    end
   end
 
   def test_page_families_and_shared_navigation

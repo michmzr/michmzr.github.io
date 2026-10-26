@@ -37,7 +37,7 @@ The opinions expressed herein are my own personal opinions and do not represent 
 
 ## You can find me on
 
-- Personal, non technical blog [Geekowojażer](geekowojazer.pl) (only polish language)
+- Personal, non technical blog [Geekowojażer](https://www.geekowojazer.pl/) (only polish language)
 - [LinkedIn](https://www.linkedin.com/in/michmzr/)
 - [Twitter](https://twitter.com/MichalMzr)
 - [Github](https://github.com/michmzr/)
